@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	 xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<th:block th:fragment="naverConfigFragment">
+	<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+	<script type="text/javascript">
+	
+		var domain = window.location.hostname;
+	
+		if (domain == 'www.whaple.kr' || domain == 'whaple.kr') {
+			if (!wcs_add)
+				var wcs_add = {};
+			wcs_add["wa"] = "f67324cdc296e0";
+			
+			if (window.wcs) {
+				wcs_do();
+			}
+			
+			/* 
+			
+			if (!_nasa)
+				var _nasa = {};
+			if (window.wcs) {
+				wcs.inflow("www.whaple.kr"); // PC용 사이트에서는 파라미터 부분에 PC용사이트 host를, 모바일용 사이트에서는 파라미터 부분에 모바일용 사이트 host를 입력한다.
+				wcs_do(_nasa);
+			} 
+			
+			*/
+		}
+		
+	</script>
+</th:block>
+
+</html>
+

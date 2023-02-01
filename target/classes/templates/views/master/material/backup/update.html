@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/master_nav">
+
+<th:block layout:fragment="css">
+	<style>
+		.main-preview {
+			width: 100%;
+			height: 100%;
+		}
+		
+		.main-preview figure {
+			width: 100%;
+		}
+		
+		.main-preview img {
+			width: 100%;
+		}
+		
+		.list-preview figure {
+			width: 100px;
+			height: 100px;
+			cursor: pointer;
+		}
+		
+		.list-preview img {
+			width: 100px;
+			height: 100px;
+		}
+		
+		.selectedit {
+			position: relative;
+		}
+		
+		.selectedit .overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: none;
+			color: #FFF;
+		}
+		
+		.selectedit .overlay a {
+			cursor: pointer;
+		}
+		
+		.selectedit:hover .overlay {
+			display: block;
+			background: rgba(0, 0, 0, .3);
+		}
+		
+		.menu-material::after {
+			display: none;
+		}
+		
+		</style>
+</th:block>
+
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+
+	<script type="text/javascript" src="/lib/js/dropzone.js"></script>
+	<script type="text/javascript" src="/assets/js/component/master/-master-modifier-dropzone-realtime.js"></script>
+	
+	<script th:inline="javascript">
+		/*<![CDATA[*/ 
+		var modifyInfo = /*[[ ${modifyInfo} ]]*/ {};
+		/*]]>*/
+		
+	</script>
+	
+</th:block>
+
+<div layout:fragment="content">
+	<div class="justify-content-center row bg-light">
+		<div class="col-12 p-3"></div>
+		
+		<div class="col-md-8">
+			<span>마감재 수정</span>
+		</div>
+		<div class="col-12 p-3"></div>
+		
+		<div>
+			<div id="template" class="m-1">
+				<figure class="figure selectedit" style="">
+					<img data-dz-thumbnail class="img-thumbnail">
+					<div class="overlay text-right">
+						<div id="tags-list"></div>
+						<!-- <i id="img-tooltip" data-toggle="tooltip" data-placement="top" title="Tooltip for image" data-animation="false" data-trigger="manual"></i> -->
+						<a class="fa fa-square-o fa-1x main-image-btn mr-1 mt-3" data-toggle="tooltip" data-placement="right" title="대표 이미지">
+							대표 이미지</a>
+						<a class="fa fa-refresh fa-1x refresh-btn mr-1 mt-3" data-toggle="tooltip" data-placement="right" title="태그 초기화"></a>
+						<a class="fa fa-times-circle fa-1x remove-btn mr-3 mt-3" data-toggle="tooltip" data-placement="right" title="이 사진을 삭제"></a>
+					</div>
+					<!-- <figcaption class="figure-caption">A caption for the above image.</figcaption> -->
+				</figure>
+			</div>
+		</div>
+		<div class="col-md-8" id="uploadDiv">
+			<div>
+				<div class="col-lg-12" id="edit_window"></div>
+				<div class="col-lg-12">
+					<div class="row" id="edit_list">
+						<!-- <div id="" class="default"></div> -->
+					</div>
+				</div>
+			</div>
+			<!-- 드랍존 지역 -->
+			<div class="" id="fileDropzone">
+				<div id="formLayout" class="border border-info rounded-lg" style="cursor: pointer;">
+					<!-- <div class="align-items-center row"> -->
+						<!-- <div class="dz-default dz-message text-center text-middle col-sm-12" style="height: 695px;"> -->
+						<div class="p-0 m-0 dz-default dz-message col-sm-12 justify-content-center align-items-center row" style="height: 395px;">
+							<div class="text-center">
+							<span>사진을 끌어다 올려주세요 (최대 5장)</span>
+							<div class="text-center mt-5 mb-5">
+								<i class="fa fa-plus-circle fa-5x text-info"
+									aria-hidden="true"></i>
+							</div>
+							<h5 class="font-weight-bold">주의사항</h5>
+							<small>높은 해상도의 .jpg 파일 사용</small><br>
+							<small>혹은 10MB 이하의 싸이즈로 업로드해주세요.</small>
+								</div>
+						</div>
+					<!-- </div> -->
+				</div>
+			</div>
+		</div>
+						
+		<div class="col-12 p-3"></div>	
+		<div class="col-md-8">
+			<form id="materialform" name="materialform" th:action="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_MOD}" method="post">
+				
+				<input type="hidden" name="no" th:value="${material.no}">
+				<input type="hidden" name="mtClass.no" th:value="${material.mtClass.no}">
+				<input type="hidden" name="mtDtd.no" th:value="${material.mtDtd.no}">
+				<input type="hidden" name="mtPf.no" th:value="${material.mtPf.no}">
+				<input type="hidden" name="mtPkg.no" th:value="${material.mtPkg.no}">
+				<input type="hidden" name="mtSales.no" th:value="${material.mtSales.no}">
+				<input type="hidden" name="mtSpace.no" th:value="${material.mtSpace.no}">
+				<input type="hidden" name="mtSpec.no" th:value="${material.mtSpec.no}">
+				<input type="hidden" name="mtStd.no" th:value="${material.mtStd.no}">
+				
+				<input type="hidden" id="filesInfo" name="filesInfo" >
+				
+				<table class="table">
+					<tr>
+						<td><span>커넥트브릭 내부 정보</span></td>
+					</tr>
+					<tr>
+						<th scope="col">커넥트브릭 분류코드</th>
+						<td>
+							<input type="text" name="cbCode" th:value="${material.cbCode}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">커넥트브릭 제품명</th>
+						<td>
+							<input type="text" name="cbName" th:value="${material.cbName}">
+						</td>
+					</tr>
+				</table>
+				<div class="col-12 p-3"></div>	
+				<table class="table">
+					<tr>
+						<td><span>제품 분류 카테고리</span></td>
+					</tr>
+					<tr>
+						<th scope="col">대분류(종류)</th>
+						<td>
+							<select id="classLg" name="mtClass.classLg">
+								<option th:value="''" th:selected="${material.mtClass.classLg} ==''">====선택====</option>
+								<option th:value="'타일'" th:selected="${material.mtClass.classLg} == '타일'">타일</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">중분류 (소성온도)</th>
+						<td>
+							<select id="classMd" name="mtClass.classMd">
+								<option th:value="''" th:selected="${material.mtClass.classMd} == ''">====선택====</option>
+								<option th:value="'자기질'" th:selected="${material.mtClass.classMd} == '자기질'">자기질</option>
+								<option th:value="'도기질'" th:selected="${material.mtClass.classMd} == '도기질'">도기질</option>
+								<option th:value="'석기질'" th:selected="${material.mtClass.classMd} == '석기질'">석기질</option>
+								<option th:value="'토기질'" th:selected="${material.mtClass.classMd} == '토기질'">토기질</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">소분류 (표면처리)</th>
+						<td>
+							<select id="classSm" name="mtClass.classSm">
+								<option th:value="''" th:selected="${material.mtClass.classSm} == ''">====선택====</option>
+								<option th:value="'포세린'" th:selected="${material.mtClass.classSm} == '포세린'">포세린</option>
+								<option th:value="'유약폴리싱'" th:selected="${material.mtClass.classSm} == '유약폴리싱'">유약폴리싱</option>
+								<option th:value="'폴리싱'" th:selected="${material.mtClass.classSm} == '폴리싱'">폴리싱</option>
+								<option th:value="'도기질'" th:selected="${material.mtClass.classSm} == '도기질'">도기질</option>
+								<option th:value="'모자이크'" th:selected="${material.mtClass.classSm} == '모자이크'">모자이크</option>
+								<option th:value="'석기질'" th:selected="${material.mtClass.classSm} == '석기질'">석기질</option>
+								<option th:value="'토기질'" th:selected="${material.mtClass.classSm} == '토기질'">토기질</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+				<div class="col-12 p-3"></div>	
+				<table class="table">
+					<tr>
+						<td><span>제품 속성</span></td>
+					</tr>
+					<tr>
+						<th scope="col">풀바디</th>
+						<td>
+							<label for="mtSpec.fullbodyTrue">Y</label>
+							<input type="radio" id="mtSpec.fullbodyTrue" name="mtSpec.fullbody" th:value="true" th:checked="${material.mtSpec.fullbody}">
+							<label for="mtSpec.fullbodyFalse">N</label>
+							<input type="radio" id="mtSpec.fullbodyFalse" name="mtSpec.fullbody" th:value="false" th:checked="${!material.mtSpec.fullbody}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">논슬립</th>
+						<td>
+							<label for="mtSpec.fullbodyTrue">Y</label>
+							<input type="radio" id="mtSpec.fullbodyTrue" name="mtSpec.nonslip" th:value="true" th:checked="${material.mtSpec.nonslip}">
+							<label for="mtSpec.fullbodyFalse">N</label>
+							<input type="radio" id="mtSpec.fullbodyFalse" name="mtSpec.nonslip" th:value="false" th:checked="${!material.mtSpec.nonslip}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">표면 재질</th>
+						<td>
+							<select id="mtSpec.surface" name="mtSpec.surface">
+								<option th:value="''" th:selected="${material.mtSpec.surface} == ''">====선택====</option>
+								<option th:value="'무광'" th:selected="${material.mtSpec.surface} == '무광'">무광</option>
+								<option th:value="'유광'" th:selected="${material.mtSpec.surface} == '유광'">유광</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">표면 질감</th>
+						<td>
+							<select id="mtSpec.surfaceTexture" name="mtSpec.surfaceTexture">
+								<option th:value="''" th:selected="${material.mtSpec.surfaceTexture} == ''">====선택====</option>
+								<option th:value="'매끄러움'" th:selected="${material.mtSpec.surfaceTexture} == '매끄러움'">매끄러움</option>
+								<option th:value="'부드러움'" th:selected="${material.mtSpec.surfaceTexture} == '부드러움'">부드러움</option>
+								<option th:value="'약간거침'" th:selected="${material.mtSpec.surfaceTexture} == '약간거침'">약간거침</option>
+								<option th:value="'거침'" th:selected="${material.mtSpec.surfaceTexture} == '거침'">거침</option>
+								<option th:value="'매우거침'" th:selected="${material.mtSpec.surfaceTexture} == '매우거침'">매우거침</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">패턴 종류</th>
+						<td>
+							<input type="text" name="mtSpec.pattern" th:value="${material.mtSpec.pattern}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">패턴 수</th>
+						<td>
+							<input type="number" name="mtSpec.patternNum" th:value="${material.mtSpec.patternNum}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">칼라톤</th>
+						<td>
+							<input type="text" name="mtSpec.color" th:value="${material.mtSpec.color}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">칼라톤 입력</th>					
+						<td>
+							<th:block th:each="mColor, iter : ${material.mtColors}">
+								<input type="text" th:name="mtColors[__${iter.index}__].colorHex" th:value="${mColor.colorHex}">
+							</th:block>
+						</td>
+					</tr>
+				</table>
+				<div class="col-12 p-3"></div>	
+				<table class="table">
+					<tr>
+						<td><span>제품 규격</span></td>
+					</tr>
+					<tr>
+						<th scope="col">제품크기(cm)</th>
+						<td>
+							<input type="text" name="mtStd.sizeW" th:value="${material.mtStd.sizeW}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">제품크기(cm)</th>
+						<td>
+							<input type="text" name="mtStd.sizeH" th:value="${material.mtStd.sizeH}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">두께 (mm)</th>
+						<td>
+							<input type="text" name="mtStd.thick" th:value="${material.mtStd.thick}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">샘플 크기 (mm)</th>
+						<td>
+							<input type="text" name="mtStd.sampSizeW" th:value="${material.mtStd.sampSizeW}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">샘플 크기 (mm)</th>
+						<td>
+							<input type="text" name="mtStd.sampSizeH" th:value="${material.mtStd.sampSizeH}">
+						</td>
+					</tr>
+				</table>
+				<div class="col-12 p-3"></div>	
+				<table class="table">
+					<tr>
+						<td><span>제품 성능</span></td>
+					</tr>
+					<tr>
+						<th scope="col">흡수 가능 여부</th>
+						<td>
+							<label for="mtPf.waterAbsrpTrue">Y</label>
+							<input type="radio" id="mtPf.waterAbsrpTrue" name="mtPf.waterAbsrp" th:value="true" th:checked="${material.mtPf.waterAbsrp}">
+							<label for="mtPf.waterAbsrpFalse">N</label>
+							<input type="radio" id="mtPf.waterAbsrpFalse" name="mtPf.waterAbsrp" th:value="false" th:checked="${!material.mtPf.waterAbsrp}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">흡수율 (11.0~15.0)</th>
+						<td>
+							<input type="text" name="mtPf.waterAbsrpRate" th:value="${material.mtPf.waterAbsrpRate}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">미끄럼 저항성</th>
+						<td>
+							<input type="text" name="mtPf.resist" th:value="${material.mtPf.resist}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">인증</th>
+						<td>
+							<input type="text" name="mtPf.certified" th:value="${material.mtPf.certified}">
+						</td>
+					</tr>
+				</table>
+				<div class="col-12 p-3"></div>
+				<table class="table">
+					<tr>
+						<td><span>시공 공간</span></td>
+					</tr>
+					<tr>
+						<th scope="col">실외</th>
+						<td>
+							<label for="mtSpace.outPossibleTrue">Y</label>
+							<input type="radio" id="mtSpace.outPossibleTrue" name="mtSpace.outPossible" th:value="true" th:checked="${material.mtSpace.outPossible}">
+							<label for="mtSpace.outPossibleFalse">N</label>
+							<input type="radio" id="mtSpace.outPossibleFalse" name="mtSpace.outPossible" th:value="false" th:checked="${!material.mtSpace.outPossible}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">실내</th>
+						<td>
+							<label for="mtSpace.inPossibleTrue">Y</label>
+							<input type="radio" id="mtSpace.inPossibleTrue" name="mtSpace.inPossible" th:value="true" th:checked="${material.mtSpace.inPossible}">
+							<label for="mtSpace.inPossibleFalse">N</label>
+							<input type="radio" id="mtSpace.inPossibleFalse" name="mtSpace.inPossible" th:value="false" th:checked="${!material.mtSpace.inPossible}">
+						</td>
+					</tr>
+				</table>
+				<div class="col-12 p-3"></div>
+				<table class="table">
+					<tr>
+						<td><span>시공 부위</span></td>
+					</tr>
+					<tr>
+						<th scope="col">방 바닥</th>
+						<td>
+							<label for="mtSpace.roomFloorTrue">Y</label>
+							<input type="radio" id="mtSpace.roomFloorTrue" name="mtSpace.roomFloor" th:value="true" th:checked="${material.mtSpace.roomFloor}">
+							<label for="mtSpace.roomFloorFalse">N</label>
+							<input type="radio" id="mtSpace.roomFloorFalse" name="mtSpace.roomFloor" th:value="false" th:checked="${!material.mtSpace.roomFloor}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">방 벽</th>
+						<td>
+							<label for="mtSpace.roomWallTrue">Y</label>
+							<input type="radio" id="mtSpace.roomWallTrue" name="mtSpace.roomWall" th:value="true" th:checked="${material.mtSpace.roomWall}">
+							<label for="mtSpace.roomWallFalse">N</label>
+							<input type="radio" id="mtSpace.roomWallFalse" name="mtSpace.roomWall" th:value="false" th:checked="${!material.mtSpace.roomWall}">	
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">주방 바닥</th>
+						<td>
+							<label for="mtSpace.kichFloorTrue">Y</label>
+							<input type="radio" id="mtSpace.kichFloorTrue" name="mtSpace.kichFloor" th:value="true" th:checked="${material.mtSpace.kichFloor}">
+							<label for="mtSpace.kichFloorFalse">N</label>
+							<input type="radio" id="mtSpace.kichFloorFalse" name="mtSpace.kichFloor" th:value="false" th:checked="${!material.mtSpace.kichFloor}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">주방 벽</th>
+						<td>
+							<label for="mtSpace.kichWallTrue">Y</label>
+							<input type="radio" id="mtSpace.kichWallTrue" name="mtSpace.kichWall" th:value="true" th:checked="${material.mtSpace.kichWall}">
+							<label for="mtSpace.kichWallFalse">N</label>
+							<input type="radio" id="mtSpace.kichWallFalse" name="mtSpace.kichWall" th:value="false" th:checked="${!material.mtSpace.kichWall}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">화장실 바닥</th>
+						<td>
+							<label for="mtSpace.toilFloorTrue">Y</label>
+							<input type="radio" id="mtSpace.toilFloorTrue" name="mtSpace.toilFloor" th:value="true" th:checked="${material.mtSpace.toilFloor}">
+							<label for="mtSpace.toilFloorFalse">N</label>
+							<input type="radio" id="mtSpace.toilFloorFalse" name="mtSpace.toilFloor" th:value="false" th:checked="${!material.mtSpace.toilFloor}">	
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">화장실 벽</th>
+						<td>
+							<label for="mtSpace.toilWallTrue">Y</label>
+							<input type="radio" id="mtSpace.toilWallTrue" name="mtSpace.toilWall" th:value="true" th:checked="${material.mtSpace.toilWall}">
+							<label for="mtSpace.toilWallFalse">N</label>
+							<input type="radio" id="mtSpace.toilWallFalse" name="mtSpace.toilWall" th:value="false" th:checked="${!material.mtSpace.toilWall}">	
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">베란다 바닥</th>
+						<td>
+							<label for="mtSpace.balcFloorTrue">Y</label>
+							<input type="radio" id="mtSpace.balcFloorTrue" name="mtSpace.balcFloor" th:value="true" th:checked="${material.mtSpace.balcFloor}">
+							<label for="mtSpace.balcFloorFalse">N</label>
+							<input type="radio" id="mtSpace.balcFloorFalse" name="mtSpace.balcFloor" th:value="false" th:checked="${!material.mtSpace.balcFloor}">	
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">베란다 벽</th>
+						<td>
+							<label for="mtSpace.balcWallTrue">Y</label>
+							<input type="radio" id="mtSpace.balcWallTrue" name="mtSpace.balcWall" th:value="true" th:checked="${material.mtSpace.balcWall}">
+							<label for="mtSpace.balcWallFalse">N</label>
+							<input type="radio" id="mtSpace.balcWallFalse" name="mtSpace.balcWall" th:value="false" th:checked="${!material.mtSpace.balcWall}">	
+						</td>
+					</tr>
+				</table>
+				<div class="col-12 p-3"></div>
+				<table class="table">
+					<tr>
+						<td><span>포장단위</span></td>
+					</tr>
+					<tr>
+						<th scope="col">pcs/1box</th>
+						<td>
+							<input type="text" name="mtPkg.pcsBox" th:value="${material.mtPkg.pcsBox}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">box/PLT</th>
+						<td>
+							<input type="text" name="mtPkg.boxPlt" th:value="${material.mtPkg.boxPlt}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">kg/box</th>
+						<td>
+							<input type="text" name="mtPkg.kgBox" th:value="${material.mtPkg.kgBox}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">m2/box</th>
+						<td>
+							<input type="text" name="mtPkg.meter2Box" th:value="${material.mtPkg.meter2Box}">
+						</td>
+					</tr>
+				</table>
+				<div class="col-12 p-3"></div>
+				<table class="table">
+					<tr>
+						<td><span>판매정보</span></td>
+					</tr>
+					<tr>
+						<th scope="col">원가 (m2)</th>
+						<td>
+							<input type="text" name="mtSales.costPrice" th:value="${material.mtSales.costPrice}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">업체판매가 (m2)</th>
+						<td>
+							<input type="text" name="mtSales.dtdPrice" th:value="${material.mtSales.dtdPrice}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">재고수량</th>
+						<td>
+							<input type="text" name="mtSales.stock" th:value="${material.mtSales.stock}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">재고여부 (Y/N)</th>
+						<td>
+							<label for="mtSales.stockFlagTrue">Y</label>
+							<input type="radio" id="mtSales.stockFlagTrue" name="mtSales.stockFlag" th:value="true" th:checked="${material.mtSales.stockFlag}">
+							<label for="mtSales.stockFlagFalse">N</label>
+							<input type="radio" id="mtSales.stockFlagFalse" name="mtSales.stockFlag" th:value="false" th:checked="${material.mtSales.stockFlag}">							
+						</td>
+					</tr>
+				</table>
+				<div class="col-12 p-3"></div>		
+				<table class="table">
+					<tr>
+						<td><span>유통 정보</span></td>
+					</tr>
+					<tr>
+						<th scope="col">업체명</th>
+						<td>
+							<input type="text" name="mtDtd.dtdComNo" th:value="${material.mtDtd.dtdComNo}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">업체 분류코드</th>
+						<td>
+							<input type="text" name="mtDtd.dtdCode" th:value="${material.mtDtd.dtdCode}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">업체 제품명</th>
+						<td>
+							<input type="text" name="mtDtd.dtdMtName" th:value="${material.mtDtd.dtdMtName}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">제품 설명</th>
+						<td>
+							<input type="text" name="mtDtd.dtdMtDesc" th:value="${material.mtDtd.dtdMtDesc}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">업체 사이트 URL</th>
+						<td>
+							<input type="text" name="mtDtd.dtdComUrl" th:value="${material.mtDtd.dtdComUrl}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">브랜드명</th>
+						<td>
+							<input type="text" name="mtDtd.brandName" th:value="${material.mtDtd.brandName}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">생산 국가</th>
+						<td>
+							<input type="text" name="mtDtd.country" th:value="${material.mtDtd.country}">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">출고지</th>
+						<td>
+							<input type="text" name="mtDtd.wareHouse" th:value="${material.mtDtd.wareHouse}">
+						</td>
+					</tr>
+				</table>
+				<div class="col-12 p-3"></div>
+				<button type="submit" class="btn btn-primary">수정하기</button>
+				<a th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_LIST}" class="btn btn-info">목록으로</a>
+			</form>
+		</div>
+		<div class="col-12 p-3"></div>
+	</div>
+</div>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+
+<th:block layout:fragment="css"></th:block>
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script"></th:block>
+ 
+<!-- <head>
+<style>
+body {
+	padding-top: 54px;
+}
+
+@media ( min-width : 992px) {
+	body {
+		padding-top: 56px;
+	}
+}
+</style> 
+</head> -->
+
+<div layout:fragment="content">
+	<div class="justify-content-center row bg-light">
+		<div class="col-lg-10 justify-content-center row mt-5">
+			<div class="col-lg-6">
+				<th:block th:if="${msg}!=null">
+					<div class="m-4 text-center" th:text="${httpCode}"></div>
+					<div class="m-4 text-center" th:text="${msg}"></div>
+				</th:block>
+				<th:block th:if="${msg}==null">
+					<div class="m-4 text-center">회원 정보가 존재하지 않습니다.</div>
+				</th:block>
+				<div class="m-4">
+					<a th:href="${T(com.connect.brick.config.RequestMappingConstants)._ACCESS_LOGIN}" type="" class="btn btn-info btn-lg col-lg-12">
+						다시 시도
+					</a>
+				</div>
+				<div class="m-4 mt-5">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</html>

@@ -1,0 +1,27 @@
+<svg id="ic_map_pin" xmlns="http://www.w3.org/2000/svg" width="72" height="59" viewBox="0 0 72 59">
+    <defs>
+        <style>
+            .cls-2,.cls-3{fill:#bdded8;stroke:#08564c;stroke-width:2px}.cls-3{fill:none}
+        </style>
+    </defs>
+    <g id="icon-apt" transform="translate(-159 -249)">
+        <path id="패스_8251" data-name="패스 8251" class="cls-2" d="M-12397-3646.562v-25l7-4 7 4v25" transform="translate(12570.998 3938.562)"/>
+        <path id="패스_8261" data-name="패스 8261" class="cls-2" d="M-12397-3653.562v-17l7-4 7 4v17" transform="translate(12598.999 3945.562)"/>
+        <path id="패스_8252" data-name="패스 8252" class="cls-2" d="M-12397.219-3639.5v-29l7-4 7 4v29" transform="translate(12585.219 3931.5)"/>
+        <path id="패스_8264" data-name="패스 8264" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12628 3953.5)"/>
+        <path id="패스_8268" data-name="패스 8268" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12628 3949.5)"/>
+        <path id="패스_8271" data-name="패스 8271" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12628 3945.5)"/>
+        <path id="패스_8274" data-name="패스 8274" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12628 3941.5)"/>
+        <path id="패스_8276" data-name="패스 8276" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12628 3937.5)"/>
+        <path id="패스_8277" data-name="패스 8277" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12628 3933.5)"/>
+        <path id="패스_8265" data-name="패스 8265" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12642 3953.5)"/>
+        <path id="패스_8269" data-name="패스 8269" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12642 3949.5)"/>
+        <path id="패스_8272" data-name="패스 8272" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12642 3945.5)"/>
+        <path id="패스_8266" data-name="패스 8266" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12614 3953.5)"/>
+        <path id="패스_8267" data-name="패스 8267" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12614 3949.5)"/>
+        <path id="패스_8270" data-name="패스 8270" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12614 3945.5)"/>
+        <path id="패스_8273" data-name="패스 8273" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12614 3941.5)"/>
+        <path id="패스_8275" data-name="패스 8275" class="cls-3" d="m-12433-3669.5 7 4" transform="translate(12614 3937.5)"/>
+        <path id="사각형_10321" data-name="사각형 10321" transform="translate(169 292)" style="fill:#08554b" d="M0 0h52v2H0z"/>
+    </g>
+</svg>

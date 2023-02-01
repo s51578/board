@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+
+<th:block layout:fragment="css">
+	<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+	<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+</th:block>
+
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script"></th:block>
+
+<div layout:fragment="content">
+	<div class="justify-content-center row bg-light">
+		<div class="col-12 p-3"></div>
+		<div class="col-10">
+			<span>이메일 폼 리스트</span>
+		</div>
+		<div class="col-12 p-3"></div>
+		<div class="col-10">
+			<table class="table">
+				<tr>
+					<th scope="col">번호</th>
+					<th scope="col">제목</th>
+					<th scope="col">옵션</th>
+				</tr>
+				<th:block th:each="form : ${forms}">
+					<tr>
+						<td th:text="${form.no}"></td>
+						<td>
+							<a th:href="@{${T(com.connect.brick.config.RequestMappingConstants)._MASTER_FORM_EMAIL_DETAIL}+'?no=' + ${form.no}}">
+								<span th:text="${form.subject}"></span>
+							</a>
+						</td>
+						<td>
+							<a th:href="@{'/master/form/email/update?no=' + ${form.no} }">수정</a> | 
+							<a th:href="@{'/master/form/email/delete?no=' + ${form.no} }" onclick="if(!confirm('삭제하시겠습니까?')){return false;}">삭제</a>
+						</td>
+					</tr>
+				</th:block>
+			</table>
+			<div class="col-12 p-3"></div>
+			<a class="btn btn-primary" th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_CREATE}">새로 등록</a>
+		</div>
+		<div class="col-12 p-3"></div>
+	</div>
+</div>
+
+</html>

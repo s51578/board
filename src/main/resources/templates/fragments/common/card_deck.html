@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="cardDeckFragment">
+	<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-0">
+		<th:block th:insert="fragments/common/card :: cardFragment"></th:block>
+	</div>
+</th:block>
+
+</html>

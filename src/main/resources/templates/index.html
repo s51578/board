@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/index_default">
+
+<th:block layout:fragment="css"></th:block>
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+	<script type="text/javascript" src="/assets/js/component/layout/index.js"></script>
+</th:block>
+	<div layout:fragment="content" class="m-0 p-0">
+		<div class="box__whaple--green">
+			<div class="container">
+				<div class="box__whaple--white">
+				</div>
+				<h1 class="text__tile-main">
+				  프리미엄<br>
+				타일 인테리어, 와플
+				</h1>
+				<div class="col">
+					<div class="row">
+						<a href="/main" class="box__intro-btn-tile">
+								<span class="span__intro-btn-tile-text">
+									타일 선택하기
+								</span>
+								<img src="/assets/resources/icon/contents/index/ic_arrow_next_intro_n.svg">
+						</a>
+						<a href="/service/form/quickSearch/main" class="box__intro-btn-offer">
+							<img src="/assets/resources/logo/ic_btn_search_n.svg">
+							<span class="span__intro-btn-offer-text">
+								우리 아파트 견적은?
+							</span>
+						</a>
+					</div>
+				</div>
+				<div class="box__step--wrap">
+					<div class="box__step-text">
+						Step1. 
+						<br>
+						Step2. 
+						<br>
+						Step3. 
+						<br>
+						Step4. 
+					</div>
+					<div class="box__step-text--right">
+						타일 선택하기
+						<br>
+						견적 상담 신청하기
+						<br>
+						맘에들면 계약 확정!
+						<br>
+						직영팀 시공 시작
+					</div>
+				</div>
+			</div> <!-- end of container -->
+		</div> <!-- end of box__green -->
+		<div class="img__intro--cover">
+		</div>
+			<div class="box__help--center">
+				<span class="span__help">
+					Help for you
+				</span>
+			</div>
+			<div class="box__whaple--center">
+				<span class="span__whaple-text">
+					 호텔같은 집, 타일 먼저 정하세요.
+					<br>
+					시공은 와플이 할게요! :p
+				</span>
+			</div>
+			<div class="box__slider">
+				<div class="img__slider bg-1"></div>
+				<div class="img__slider bg-2"></div>
+				<div class="img__slider bg-3"></div>
+				<div class="img__slider bg-4"></div>
+				<div class="img__slider bg-5"></div>
+				<div class="img__slider bg-6"></div>
+				<div class="img__slider bg-7"></div>
+				<div class="img__slider bg-8"></div>
+			</div>
+			<div class="wrapper__center">
+				<a href="/main">
+					<div class="btn__tile-select--green">
+						<span class="span__tile-select">
+							타일 선택하기
+						</span>
+						<img src="/assets/resources/icon/contents/index/ic_arrow_next_intro_n_.svg"></img>
+					</div>
+				</a>
+			</div>
+		<div class="box__postscript-text">
+			<div class="container">
+				<div class="box__text--center">
+					<span class="span__postscript-title">
+					 	와플 고객님들의 솔직한 이야기
+					</span>
+				</div>
+				<div class="row">
+					<div class="col-md m-3">
+						<img src="/assets/resources/icon/contents/index/icon_review_label.svg" class="img__review"></img>
+						<br>
+						<span class="span_postscript-text">
+						 	와플에서 프리미엄 타일을 다른 곳보다 훨씬 저
+							렴하게 구매할 수 있다는 얘기를 듣고 구매하게 
+							되었어요. 퀄리티 높은 타일을 저렴한 가격에 구
+							매한 것 같아 만족스럽습니다.
+						</span>
+						<br>
+						<span class="span_customer-name">
+							이** 고객님
+						</span>
+					</div>
+					<div class="col-md m-3">
+						<img src="/assets/resources/icon/contents/index/icon_review_label.svg" class="img__review"></img>
+						<br>
+						<span class="span_postscript-text">
+						 	시공팀에서 직접 타일 배송부터 폐기물처리까지 
+							다 해주셔서 어려운 점 없이 수월하게 인테리어 
+							진행했습니다! 작업해주신 분들도 너무 다 친절
+							하게 해주셨어요.
+						</span>
+						<br>
+						<span class="span_customer-name">
+							정** 고객님
+						</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md m-3">
+						<img src="/assets/resources/icon/contents/index/icon_review_label.svg" class="img__review"></img>
+						<br>
+						<span class="span_postscript-text">
+						 	처음엔 온라인으로 타일을 구매하는 게 좀 두려웠는데, 제품 받아보는 순간 구매하길 정말 잘했다고 생각했어요. 타일 퀄리티가 좋아서 놀랐습니다.
+						</span>
+						<br>
+						<span class="span_customer-name">
+							박** 고객님
+						</span>
+					</div>
+					<div class="col-md m-3">
+						<img src="/assets/resources/icon/contents/index/icon_review_label.svg" class="img__review"></img>
+						<br>
+						<span class="span_postscript-text">
+						 	저렴이 타일과는 비교도 안되는 퀄리티의 타일
+							입니다. 응대도 친절하게 해주시고 시공도 하자 
+							없이 깔끔하게 되서 너무 좋았어요.
+						</span>
+						<br>
+						<span class="span_customer-name">
+							김** 고객님
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- end of content -->
+</html>

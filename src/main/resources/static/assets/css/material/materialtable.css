@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+.table {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+.pagination {
+	margin-top: 25px;
+}
+
+label {
+	font-weight: bold;
+}
+
+.material_list_title_box {
+	padding-top: 100px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.material_list_title {
+	text-align: left;
+	font: normal normal bold 24px/40px Noto Sans KR;
+	letter-spacing: -1.2px;
+	color: #091627;
+	opacity: 1;
+}
+
+.material_box {
+	height: 100%;
+	border: 1px solid #ccc;
+	margin: 10px;
+}
+
+.material_img_box {
+	height: 300px;
+}
+
+.contents_img_box {
+	height: 344px;
+}
+
+.material_info_box {
+	padding: 30px;
+}
+
+.material_category_box {
+	padding-bottom: 30px;
+}
+
+.material_category {
+	font: normal normal normal 21px/15px Noto Sans KR;
+	letter-spacing: -0.42px;
+	color: #687888;
+	opacity: 1;
+}
+
+.material_product_info {
+	text-align: left;
+    font: normal normal bold 21px/15px Noto Sans KR;
+    letter-spacing: -0.36px;
+    color: #000000;
+    opacity: 1;
+}
+
+.material_control_box {
+	padding-top: 30px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.master_material_search_box {
+	width: 300px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#control_menu {
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#mtTable_filter {
+	margin-left: 20px;
+}
+
+#mtTable_filter > label {
+	text-align: left;
+    font: normal normal 800 16px/16px var(--default-font);
+    letter-spacing: -0.4px;
+    color: #000000;
+    opacity: 1;
+}
+
+#searchInput {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#surfaceTexture {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#surface {
+	margin-left: 20px;
+	margin-right: 20px;
+} 
+
+#country {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#color {
+	margin-left: 20px;
+	margin-right: 20px;
+}

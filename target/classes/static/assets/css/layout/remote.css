@@ -1,0 +1,54 @@
+/* #kakao_custom_btn {
+	width: 120px;
+	height: 48px;
+	
+} */
+
+/* #kakao_custom_btn {
+	
+} */
+	
+#channel-chat-button {
+	
+	width: 120px;
+	height: 48px;
+	
+	display: inline-block;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	z-index: 1000;
+	background: url("/assets/resources/icon/kakao/bt_kakao_n@2x.png");
+	background-size: contain;
+	cursor: pointer;
+}
+
+#channel-chat-button:hover {
+	background: url("/assets/resources/icon/kakao/bt_kakao_s@2x.png");
+	background-size: contain;
+}
+	
+#scroll-top {
+	display: scroll;
+	transition: background-color .3s, opacity .5s, visibility .5s;
+	opacity: 0;
+	position: fixed;
+	bottom: 100px;
+	right: 30px;
+	visibility: hidden;
+	z-index: 1000;
+}
+
+#scroll-top::after {
+	content: url("/assets/resources/icon/contents/main/ic_btn_arrow_pc_n.svg");
+}
+
+#scroll-top:hover:after {
+	cursor: pointer;
+	content: url("/assets/resources/icon/contents/main/ic_btn_arrow_pc_s.svg");
+}
+
+#scroll-top.show {
+	opacity: 1;
+	visibility: visible;
+}

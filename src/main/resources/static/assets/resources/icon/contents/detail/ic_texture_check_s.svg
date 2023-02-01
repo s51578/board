@@ -1,0 +1,13 @@
+<svg id="ic_texture_check_s" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-1{fill:none}
+        </style>
+    </defs>
+    <g id="ic_check_n">
+        <path id="패스_38267" data-name="패스 38267" class="cls-1" d="M0 0h20v20H0z"/>
+        <path id="패스_38268" data-name="패스 38268" d="M.5.5h19v19H.5z" style="stroke:#ff5d4f;fill:none"/>
+    </g>
+    <path id="패스_8304" data-name="패스 8304" class="cls-1" d="M0 0h19.938v19.938H0z"/>
+    <path id="패스_8305" data-name="패스 8305" d="m8.052 14.406-3.489-3.489L3.4 12.08l4.652 4.652 9.969-9.969L16.858 5.6z" transform="translate(-.575 -.948)" style="fill:#ff5d4f"/>
+</svg>

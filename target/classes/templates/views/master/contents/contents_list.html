@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/master_nav">
+
+<th:block layout:fragment="css">
+	<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+	<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" type="text/css" /> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" type="text/css" />
+	<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+	<link rel="stylesheet" href="/assets/css/material/materialtable.css">
+</th:block>
+
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+	<script type="text/javascript" src="/assets/js/component/master/contents/contents_list.js"></script>
+</th:block>
+
+<div layout:fragment="content">
+	<div class="justify-content-center row bg-white m-0 p-0">
+		<div class="col-12 p-0 m-0">
+			<div class="p-3"></div>
+			<div class="col-12 p-2 mx-auto">
+				<table class="table table-bordered table-hover" id="contents_Table">
+					<thead>
+						<tr>
+							<th scope="col">컨텐츠명</th>
+							<th scope="col">분류코드</th>
+							<th scope="col">제품명</th>
+							<th scope="col">제품사진</th>
+							<th scope="col">가격</th>
+							<th scope="col">등록일</th>
+							<th scope="col">옵션</th>
+						</tr>
+					</thead>
+					<tbody>
+						<th:block th:each="contents : ${contentses}">
+							<tr>
+								<td th:text="${contents.material.cbName}"></td>
+								<td th:text="${contents.material.cbCode}"></td>
+								<td th:text="${contents.material.cbName}"></td>
+								<td>
+									<img th:src="@{ '/image_storage/' + ${contents.viewImage.thumbnailPath} +'/'+ ${contents.viewImage.thumbnailName} }" class="" th:alt="${contents.viewImage.thumbnailName}" width="50px" height="50px">
+								</td>
+								<td>
+									<th:block th:if="${contents.consumerPrice == 0 && contents.consumerPrice == contents.salesPrice}">
+										<span class="_tile_price_value">별도문의</span>&nbsp;&nbsp;
+									</th:block>
+									<th:block th:if="${contents.consumerPrice != 0 && contents.salesPrice != 0 && contents.consumerPrice != contents.salesPrice}">
+										<span class="_tile_price_value" th:text="${#numbers.formatInteger(contents.salesPrice, 0, 'COMMA')}+'원 ' + '/ 1박스'"></span>
+									</th:block>
+									<th:block th:if="${contents.consumerPrice != 0 && contents.salesPrice == 0}">
+										<span class="_tile_price_value" th:text="${#numbers.formatInteger(contents.consumerPrice, 0, 'COMMA')}+'원'+ '/ 1박스'"></span>
+									</th:block>
+									<th:block th:if="${contents.consumerPrice == 0 && contents.salesPrice != 0}">
+										<span class="_tile_price_value" th:text="${#numbers.formatInteger(contents.salesPrice, 0, 'COMMA')}+'원'+ '/ 1박스'"></span>
+									</th:block>
+									<th:block th:if="${contents.consumerPrice != 0 && contents.salesPrice == contents.consumerPrice}">
+										<span class="_tile_price_value" th:text="${#numbers.formatInteger(contents.salesPrice, 0, 'COMMA')}+'원'+ '/ 1박스'"></span>
+									</th:block>
+								</td>
+								<td th:text="${contents.regFormatDate}"></td>
+								<td>
+									<a class="btn btn-primary" th:href="@{${T(com.connect.brick.config.RequestMappingConstants)._DP_DETAIL}+'?no=' + ${contents.no}}">상세보기</a>
+									<a class="btn btn-secondary" th:href="@{'/master/contents/update?no=' + ${contents.no}}">수정</a>
+									<a class="btn btn-danger" th:href="@{'/master/contents/delete?no=' + ${contents.no}}" onclick="if(!confirm('삭제하시겠습니까?')){return false;}">삭제</a>
+								</td>
+							</tr>
+						</th:block>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-12 p-3"></div>
+			<div class="col-12 p-2"></div>
+			<div class="pl-5">
+				<a class="btn btn-primary" href="/master/contents/create">새로 등록</a>
+			</div>
+			<div class="col-12 p-5"></div>
+		</div>
+	</div>
+</div>
+
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="cardDeckFragment">
+	<div class="col-6">
+		<th:block th:insert="fragments/common/card :: cardFragment"></th:block>
+		<div class="bt-tertiary-default view_detail" data-toggle="modal" th:data-id="${dpMaterial.material.no}" th:data-target="'#viewModal'+${dpMaterial.material.no}">
+			<span class="h5 gray500">상세보기</span>
+		</div>
+		<div class="col-12 p-3"></div>
+	</div>
+	
+</th:block>
+
+</html>

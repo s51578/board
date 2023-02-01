@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/master_nav">
+
+<th:block layout:fragment="css">
+</th:block>
+
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script"></th:block>
+
+<div layout:fragment="content">
+	<div class="justify-content-center row bg-light">
+		<div class="col-12 p-3"></div>
+		
+		<div class="col-md-8">
+			<span>부자재 정보</span>
+		</div>
+		<div class="col-12 p-3"></div>
+		
+		<div class="col-md-8 justify-content-center row">
+			<div class="col-12 text-center">
+				<span>대표 사진</span>
+			</div>
+			<img th:src="@{ '/image_storage/' + ${sub.mainImage.thumbnailPath} +'/'+ ${sub.mainImage.thumbnailName} }" class=""
+										th:alt="${sub.mainImage.thumbnailName}" style="width: 100%">
+	
+			<div class="col-12 p-3"></div>
+			<div class="col-12 text-center">
+				<span>부가 사진</span>
+			</div>
+			<div class="">
+				<th:block th:each="image : ${sub.images}">
+					<img th:src="@{ '/image_storage/' + ${image.filePath} +'/'+ ${image.fileName} }" class=""
+						th:alt="${image.fileName}" style="width: 100%">
+					<div class="col-12 p-3"></div>
+				</th:block>
+			</div>
+		</div>
+						
+		<div class="col-12 p-3"></div>	
+		<div class="col-md-8">
+		
+			<table class="table">
+				<tr>
+					<th scope="col">원산지</th>
+					<td>
+						<span th:text="${sub.country}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">분류</th>
+					<td>
+						<span th:text="${sub.classLg.className}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">제품명</th>
+					<td>
+						<span th:text="${sub.subName}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">제조사</th>
+					<td>
+						<span th:text="${sub.mfCom}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">시공 방법</th>
+					<td>
+						<span th:text="${sub.method}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">시공 필요 도구</th>
+					<td>
+						<span th:text="${sub.tools}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">믹싱 비율</th>
+					<td>
+						<span th:text="${sub.mixRatio}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">제품 무게</th>
+					<td>
+						<span th:text="${sub.kgBox}"></span> kg
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">소요량 타입</th>
+					<td>
+						<span th:text="${sub.usageType}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">소요량</th>
+					<td>
+						<span th:text="${sub.usagePerm2}"></span> m2
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">추가 소요량</th>
+					<td>
+						<span th:text="${sub.usageAdd}"></span> 개
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">가격</th>
+					<td>
+						<span th:text="${sub.cost}"></span> 원
+					</td>
+				</tr>
+			</table>
+			<div class="col-12 p-3"></div>
+			<a th:href="@{${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_SUB_UPDATE}+'?no=' + ${sub.no}}" class="btn btn-primary">수정하기</a>
+			<a th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_SUB_LIST}" class="btn btn-info">목록으로</a>
+		</div>
+		<div class="col-12 p-3"></div>
+	</div>
+</div>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="mdPickListFragment">
+	
+	<!-- css -->
+	<link rel="stylesheet" href="/assets/css/common/slide/mdpick_slide.css" type="text/css"/>
+	<!-- js -->
+	<script type="text/javascript" src="/assets/js/common/slide/mdpick_slide.js"></script>
+
+	<div class="row">
+		<div class="col-12 p-0 m-0 mdPick_slide_container">
+			<div class="mdList-slick-slide">
+				<th:block th:each="mdPick : ${mdPickList}">
+					<div th:insert="fragments/common/card :: cardFragment" th:with="dpMaterial=${mdPick}"></div>
+				</th:block>
+			</div>
+		</div>
+	</div>
+	
+</th:block>
+
+</html>

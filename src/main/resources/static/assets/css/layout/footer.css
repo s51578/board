@@ -1,0 +1,190 @@
+._footer_bg {
+	
+	background-color: #2A534C;
+	padding: 0px;
+}
+
+._footer_logo {
+	
+	margin-top: 55px;
+}
+
+._footer_service_list {
+	
+	margin-top: 38px;
+	
+}
+
+._footer_service_list ._list_item {
+	
+	margin-right: 32px;
+	
+}
+
+._footer_service_list ._list_item > * {
+
+	color : white;
+	font-size : 16px;
+	text-decoration: none;
+}
+
+._footer_company_list {
+	margin-top : 28px;
+	margin-bottom : 40px;
+	
+}
+
+._footer_company_list ._company_info {
+	/* width: 800px; */
+	font-size: 14px;
+	color: #8390A0;
+	font: normal normal normal 14px/25px Spoqa Han Sans Neo;
+}
+
+._footer_company_list ._copyright_info {
+	font-size: 14px;
+	color: #424F5F;
+	margin-top: 10px;
+}
+
+._footer_service_center {
+	width: 193px;
+	margin-bottom: 40px;
+	text-align: right;
+}
+
+._footer_service_center ._footer_service_title {
+	font-size: 16px;
+	color: white;
+}
+
+._footer_service_center ._footer_service_number {
+	font-size: 28px;
+	color: white;
+}
+
+._footer_service_center ._footer_service_time {
+	font-size: 14px;
+	color: #8390A0;
+	letter-spacing: -0.28px;
+}
+
+/* #kakaoChannelBtn>a>img {
+	width: 152px;
+	height: 60px;
+	object-fit: cover;
+} */
+
+.footer_consumer_center_box {
+	margin-top: 68px;
+	margin-bottom: 36px;
+}
+
+.footer_consumer_center_text_box {
+	
+}
+
+.consumer_center_text {
+	text-align: left;
+	font: normal normal bold 13px/26px var(--default-font);
+	letter-spacing: -0.33px;
+	color: #FFFFFF;
+	opacity: 1;
+	cursor: default;
+}
+
+.consumer_center_text:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.telephone_text_box {
+	
+}
+
+.telephone_text {
+	text-align: left;
+	font: normal normal 800 28px/32px var(--default-font);
+	letter-spacing: -0.7px;
+	color: #FFFFFF;
+	opacity: 1;
+}
+
+.center_open_time_box {
+	
+}
+
+.time_text {
+	text-align: left;
+	font: normal normal normal 13px/14px var(--default-font);
+	letter-spacing: -0.33px;
+	color: #FFFFFF;
+	opacity: 1;
+}
+
+.footer_menu > div:last-child {
+	margin-right: 0;
+}
+
+.footer_menu_text {
+	text-align: left;
+	font: normal normal normal 13px/21px var(--default-font);
+	letter-spacing: -0.33px;
+	color: #FFFFFF;
+	opacity: 1;
+}
+
+.footer_menu_text_b {
+	text-align: left;
+	font: normal normal 800 13px/21px var(--default-font);
+	letter-spacing: -0.33px;
+	color: #FFFFFF;
+	opacity: 1;
+}
+
+.footer_company_info_text {
+	text-align: left;
+	font: normal normal normal 13px/25px var(--default-font);
+	letter-spacing: -0.26px;
+	color: #98A7A5;
+	opacity: 1;
+}
+
+.img__cash-receipt {
+	width:72px;
+	height:57px;
+	background-image: url(/assets/resources/logo/ic_cash_receipt@2x.png);
+	background-size: cover;
+	margin:0px 15px 40px 15px;
+}
+
+.img__sns-blog {
+	width:36px;
+	height:36px;
+	background-image: url(/assets/resources/icon/sns/ic_footer_sns_blog.svg);
+	background-size: cover;
+	position:absolute;
+	right:15px;
+	top:68px;
+	z-index: 1;
+}
+
+/* medium*/ 
+@media all and (min-width:768px) and (max-width:1200px) {
+	
+} 
+
+/* extra small*/ 
+@media all and (max-width:767px) { 
+	.img__cash-receipt {
+		width:64px;
+		height:50px;
+		margin:0px 15px 32px 15px;
+	}
+}
+
+@media all and (max-width:386px) {
+	.img__sns-blog {
+		right:17px;
+	}
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	 xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:fragment="configFragment">
+
+	
+	<meta charset="UTF-8"></meta>
+
+	
+	<!-- static css -->
+	
+	<link rel="stylesheet" href="/lib/bootstrap/bootstrap-4.3.1-dist/css/bootstrap.min.css"></link>
+	<!-- <link rel="stylesheet" href="/assets/fontawesome/fontawesome-free-5.8.1-web/css/all.css"></link> -->
+	<link rel="stylesheet" href="/lib/fontawesome/font-awesome-4.7.0/css/font-awesome.min.css"></link>
+	
+	<link rel="stylesheet" type="text/css" href="/lib/js/slick-1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="/lib/js/slick-1.8.1/slick/slick-theme.css"/>
+		
+	<!-- layout css -->
+	<link rel="stylesheet" href="/assets/css/layout/header.css"></link>
+	<link rel="stylesheet" href="/assets/css/layout/footer.css"></link>
+	<link rel="stylesheet" href="/assets/css/layout/index.css"></link>
+	<link rel="stylesheet" href="/lib/css/font-face.css"></link>
+	
+	<link rel="stylesheet" href="/assets/css/common/comp/btn.css"></link>
+	<!-- 나눔스퀘어 -->
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css"></link> -->
+	
+	<!-- <link rel="stylesheet" href="/assets/css/dropzone.css"></link> -->
+	<!-- <link rel="stylesheet" href="/assets/css/typeahead.css"></link> -->
+	
+	<!-- remoteCSS -->
+	<link rel="stylesheet" href="/assets/css/layout/remote.css" type="text/css"/>
+	
+	<link rel="stylesheet" href="/assets/css/common/card/card.css" type="text/css"/>
+	
+	<!-- 컨텐츠페이지의 CSS 영역이 들어감 -->
+	<th:block layout:fragment="css"></th:block>
+	
+	<!-- static js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+	
+	<!-- slick -->
+	<script type="text/javascript" src="/lib/js/slick-1.8.1/slick/slick.min.js"></script>
+	
+	
+	<!-- ================================== Common Component ============================================= -->
+	<!-- remoteJS -->
+	<script type="text/javascript" src="/assets/js/component/layout/remote.js"></script>
+	
+	
+	<!-- 컨텐츠페이지의 스크립트 영역이 들어감 -->
+	<th:block layout:fragment="script"></th:block>
+
+	<!-- ================================== Marketing API tag ============================================ -->
+	<!-- gTag -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-207501157-1"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K7CRQTW3W"></script> -->
+	<script type="text/javascript" src="/assets/js/ga/gtag.js"></script>
+	
+	<!-- Kakao JS CDN -->
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<!-- API -->
+	<script type="text/javascript" src="/assets/js/component/kakao/kakaoAPI.js"></script>
+	
+</head>
+
+</html>
+

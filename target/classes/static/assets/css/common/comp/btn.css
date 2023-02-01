@@ -1,0 +1,52 @@
+
+.a_href_box__green--btn {
+  height: 64px;
+  padding: 0 32px 0 32px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: #2a534c;
+}
+
+.a_href_box__green--btn:hover {
+	cursor:pointer;
+	background-color: #234540;	
+}
+
+.a_href_box__green--text {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-family: var(--default-font);
+  font-size: 16px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.63;
+  letter-spacing: -0.48px;
+  color: #ffe0dd;
+}
+
+.a_href_box__outline--btn {
+  height: 64px;
+  padding: 0 32px 0 32px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: solid 1px #2a534d;
+}
+
+.a_href_box__outline--btn:hover {
+	cursor:pointer;
+	background-color: rgba(42, 83, 76, 0.1);
+}
+
+.a_href_box__outline--text {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+  font-family: var(--default-font);
+  font-size: 16px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.63;
+  letter-spacing: -0.48px;
+  color: #2a534c;
+}

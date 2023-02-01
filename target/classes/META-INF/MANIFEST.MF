@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: 서주연
+Build-Jdk: 17.0.1
+Implementation-Title: web-connect-brick-server-beta
+Implementation-Version: 0.1.1.1-SNAPSHOT-Beta
+Implementation-Vendor-Id: com.connect.brick
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/cnt-beta-server
+Created-By: Maven Integration for Eclipse
+

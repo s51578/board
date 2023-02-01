@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/master_nav">
+
+<th:block layout:fragment="css">
+	<link rel="stylesheet" href="/assets/css/master/master_main.css" type="text/css"/>
+</th:block>
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script"></th:block>
+
+<div layout:fragment="content">
+	<div class="justify-content-center row bg-white p-0 m-0">
+		<div class="row col-12 p-5 m-0 d-flex justify-content-center">
+			<div class="col-12 col-lg-3 p-3 master_box">
+				<div class="col-12">
+					<div class="d-flex justify-content-center">
+						<i class="fa fa-cubes fa-5x" aria-hidden="true"></i>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<span class="master_main_menu_text">마감재 관리</span>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<span class="category_text" th:text="'등록된 마감재 개수 : '+${materialCount}"></span>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<span class="category_text" th:text="'등록된 부자재 개수 : '+${subMaterialCount}"></span>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<a class="btn btn-primary btn_size" th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_LIST}">마감재 목록</a>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<a class="btn btn-primary btn_size" th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_CREATE}">마감재 등록</a>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<a class="btn btn-primary btn_size" th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_SUB_LIST}">부자재 목록</a>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<a class="btn btn-primary btn_size" th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_SUB_CREATE}">부자재 등록</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-lg-3 p-3 master_box">
+				<div class="col-12">
+					<div class="d-flex justify-content-center">
+						<i class="fa fa-bookmark fa-5x" aria-hidden="true"></i>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<span class="master_main_menu_text">컨텐츠 관리</span>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<span class="category_text" th:text="'등록된 컨텐츠 개수 : '+${contentsCount}"></span>
+					</div>
+					<div class="col-12" style="padding-bottom: 52px;"></div>
+					<!-- <div class="col-12 p-3 d-flex justify-content-center">
+						<a class="btn btn-primary btn_size" href="/master/contents/list">컨텐츠 목록</a>
+					</div> -->
+					<!-- <div class="col-12 p-3 d-flex justify-content-center">
+						<a class="btn btn-primary btn_size" href="/master/contents/recommand/list">MD 추천 관리</a>
+					</div> -->
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<a class="btn btn-primary btn_size" th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_POPULAR_LIST}">인기 순위 관리</a>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<a class="btn btn-primary btn_size" href="/master/contents/monthSales/list">이달의 특가 관리</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-lg-3 p-3 master_box">
+				<div class="col-12">
+					<div class="d-flex justify-content-center">
+						<i class="fa fa-phone-square fa-5x" aria-hidden="true"></i>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<span class="master_main_menu_text">주문 관리</span>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<span class="category_text" th:text="'주문 요청 : '+${orderCount}"></span>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<span class="category_text" th:text="'상담 요청 : '+${contactCount}"></span>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<a class="btn btn-primary btn_size" th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_ORDER_LIST}">주문서 목록</a>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<a class="btn btn-primary btn_size" th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_ORDER_CONTACT_LIST}">상담 목록</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-lg-3 p-3 master_box">
+				<div class="col-12">
+					<div class="d-flex justify-content-center">
+						<i class="fa fa-cog fa-5x" aria-hidden="true"></i>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<span class="master_main_menu_text">임시 관리</span>
+					</div>
+					<div class="col-12" style="padding-bottom: 52px;"></div>
+					<div class="col-12" style="padding-bottom: 52px;"></div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<a class="btn btn-primary btn_size" href="#">가이드북 관리</a>
+					</div>
+					<div class="col-12 p-3 d-flex justify-content-center">
+						<a class="btn btn-primary btn_size" href="#">이메일 폼 관리</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--  <div class="col-10">
+			<b>마감재 관리</b>
+			<table class="table">
+				<tr>
+					<td>
+						<a th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_LIST}">
+							<b>마감재 목록</b>
+						</a>
+					</td>
+					<td>
+						<a th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_CREATE}">
+							마감재 새로 등록
+						</a>
+					</td>
+					<td>
+						<a th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_SUB_LIST}">
+							<b>부자재 목록</b>
+						</a>
+					</td>
+					<td>
+						<a th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_SUB_CREATE}">부자재 새로 등록</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-12 p-3"></div>
+		<div class="col-10">
+			<b>컨텐츠 관리</b>
+			<table class="table">
+				<tr>
+					<td>
+						<a href="/master/contents/list">컨텐츠 목록</a>
+					</td>
+					<td>
+						<a href="/master/contents/recommand/list">셀인러 추천</a>
+					</td>
+					<td>
+						<a th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_POPULAR_LIST}">인기 순위 관리</a>
+					</td>
+					<td>
+						<a href="/master/contents/monthSales/list">이달의 특가 관리</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-12 p-3"></div>
+		<div class="col-10">
+			<b>주문서 관리</b>
+			<table class="table">
+				<tr>
+					<td>
+						<a th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_ORDER_LIST}">주문서 목록</a>
+					</td>
+					<td>
+						<a th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_ORDER_CONTACT_LIST}">상담 목록</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-12 p-3"></div>
+		<div class="col-10">
+			<b>가이드북 관리</b>(예정)
+			<table class="table">
+				<tr>
+					<td>
+						<a href="#">가이드북 목록</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-12 p-3"></div>
+		<div class="col-10">
+			<b>이메일 폼</b>(예정)
+			<table class="table">
+				<tr>
+					<td>
+						<a href="#">이메일 폼 목록</a>
+					</td>
+				</tr>
+			</table>
+		</div>  -->
+		
+		<!-- <div class="col-12 p-3"></div>
+		<div class="col-10">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">번호</th>
+						<th scope="col">작성자</th>
+						<th scope="col">제목</th>
+						<th scope="col">날짜</th>
+					</tr>
+				</thead>
+				<tbody>
+					<th:block th:each="question : ${questions}">
+						<tr>
+							<td th:text="${question.no}"></td>
+							<td th:text="${question.writer}"></td>
+							<td>
+								<a th:href="@{${T(com.connect.brick.config.RequestMappingConstants)._QNA_DETAIL}+'?no=' + ${question.no}}">
+									<span th:text="${question.material.cbName}"></span>
+								</a>
+							</td>
+							<td th:text="${question.qnaFormatDate}"></td>
+						</tr>
+					</th:block>
+				</tbody>
+			</table>
+			<a class="btn btn-primary" th:href="${T(com.connect.brick.config.RequestMappingConstants)._QNA_FORM}">글쓰기</a>
+		</div> -->
+	</div>
+</div>
+
+</html>

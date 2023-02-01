@@ -1,0 +1,400 @@
+/* �⑤벏�꽰占쎄텢占쎌뒠 */
+.dot {
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: #B1B1B1;
+	margin: 11px 10px 11px 10px;
+}
+
+.all_product_list_container {
+	margin-bottom: 98px;
+}
+
+._product_list_box {
+	
+}
+
+
+.product_list_top_box {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.product_list_title_box {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.product_list_title_text {
+	text-align: left;
+	font: normal normal 800 22px/58px var(--default-font);
+	letter-spacing: -0.55px;
+	color: #000000;
+	opacity: 1;
+}
+
+.product_list_sort_box {
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+}
+
+.store_sort_btn {
+	background-color: #FFFFFF;
+	outline: none;
+	border: none;
+	text-align: right;
+	font: normal normal bold 16px/58px var(--default-font);
+	letter-spacing: -0.4px;
+	color: #000000;
+	opacity: 1;
+}
+
+.store_sort_btn:focus {
+	outline: none;
+	border: none;
+}
+
+.sortMenu {
+	width: 150px;
+	height: 200px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 3px 12px #25292f14;
+	border-radius: .25rem;
+	position: absolute;
+	top: 120%;
+	right: 0%;
+	z-index: 1000;
+}
+
+.sortMenu ul {
+	list-style: none;
+	padding: 10px;
+}
+
+.sortMenu li > div {
+	padding: 5px;
+}
+
+.store_sort_abtn {
+	text-decoration: none;
+	color: #000000;
+	font: normal normal bold 16px/16px var(--default-font);
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.store_sort_abtn:hover {
+ 	text-decoration: none;
+ 	color: #4C64F2;
+}
+
+.store_sort_text {
+	text-align: right;
+}
+
+.storeFilter {
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+.storeFilter li {
+	float:left;
+}
+
+.storeFilter__icon {
+	display:flex;
+	list-style: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+.itemsLine {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.filterBtn {
+	width:80px;
+	height:36px;
+    border-radius: 18px;
+    border: solid 1px #dbdbdb;
+    background-color: #fff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sortBtn {
+	width:95px;
+}
+
+.tileSearchKeyword {
+	width:210px;
+	height:36px;
+    border-radius: 18px;
+    border: solid 1px #dbdbdb;
+    background-color: #fff;
+    background-image: url('/assets/resources/icon/contents/main/icon_st-search.svg');
+    background-repeat: no-repeat;
+    background-position: 16px center;
+    padding-left: 44px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: var(--default-font);
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.38px;
+    text-align: left;
+    color: #000;
+}
+
+.tileSearchKeyword::placeholder {
+	color: #aaa;
+}
+
+.filterBtnText {
+	font-family: var(--default-font);
+	font-size: 15px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	letter-spacing: -0.38px;
+	text-align: left;
+	color: #000;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: 4px;
+}
+
+.filterDrop {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.open > .filterContent {
+	display: block;
+}
+
+.open > .filterBtn {
+	background-color: #2a534c;
+}
+
+.open >.filterBtn > .filterBtnText {
+	color:#fff;
+}
+
+.open > .filterBtn > .filterBtnLogo {
+	transform:rotate(180deg);
+}
+
+.filterBtnLogo {
+	margin-right: auto;
+}
+.filterContent {
+  display: none;
+  position: absolute;
+  margin-top: 16px;
+  min-width: 150px;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.04);
+  border: solid 1px #e5e5e5;
+  z-index: 9999;
+}
+
+.filterIconArea {
+	overflow-x: auto;
+	-ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.filterIconArea::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+.filterIcon {
+	margin: 0 8px 0 0;
+    padding: 4px 8px 4px 10px;
+    background-color: #2a534c;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+.filterIconText {
+	font-family: var(--default-font);
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.3px;
+    color: #fff;
+}
+
+.filterIconReset {
+    padding: 4px 8px 4px 0px;
+    background-color: #fff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+.filterIconResetText, .noItemText {
+	font-family: var(--default-font);
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.35px;
+    text-align: left;
+    color: #000;
+}
+
+.mobileBG {
+	display:none;
+}
+.filterContent a {
+  background-color: #fff;
+  color: black;
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  text-decoration: none;
+  display: block;
+  cursor:pointer;
+  font-family: var(--default-font);
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+.filterTitle {
+  background-color: #fff;
+  color: black;
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  text-decoration: none;
+  display:none;
+  cursor:pointer;
+  font-family: var(--default-font);
+  font-size: 17px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  text-align: center;
+}
+
+.filterSurface {
+	background-image: url(/assets/resources/icon/contents/main/bt_filter_surface_n.svg);
+	border:none !important;
+}
+
+.filterIconBox {
+	padding-left: 0;
+	overflow:auto;
+}
+
+.colorBox {
+	width:16px;
+	height:16px;
+	border: solid 1px #c1c1c1;
+	margin-left: 16px;
+	margin-right: 10px;
+	object-fit: contain;
+	background-repeat: no-repeat;
+	background-position:center center;
+}
+.mobileLine {
+	width:100%;
+	height:8px;
+	display:none;
+	background-color: #ededed;
+}
+
+.lineBottom {
+	margin-top: 20px;
+	margin-bottom: 5px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.filterContent a:hover {
+	background-color: #f5f5f5;
+}
+
+.filterDrop:hover .filterBtn {
+	background-color: #2a534c;
+}
+
+.filterDrop:hover .filterBtnText {
+	color:#fff;
+}
+
+.filterDrop:hover .filterBtnLogo {
+	transform:rotate(180deg);
+}
+
+.tileSearchKeyword:focus, .filterBtn:focus {
+	outline:none;
+}
+
+@media (max-width:574px) {
+	
+	.mobileBG {
+		display:block;
+		width:auto;
+		height:100vh;
+		bottom:0;
+		background-color: black;
+		opacity:0.4;
+		cursor:pointer;
+	}
+	
+	.filterContent {
+	  position: fixed;
+	  width:100%;
+	  left:0;
+	  bottom:0;
+	  z-index: 9999;
+	}
+	
+	.filterIconArea {
+		white-space:nowrap;
+	}
+	
+	.tileSearchKeyword {
+		margin-top: 10px;
+		width:calc(100vw - 30px);
+	}
+	
+	.mdPick_product_container {
+		margin-bottom: 20px;
+	}
+	
+	.mobileLine {
+		display:block;
+	}
+
+	.filterBox {
+		margin-top: 20px;
+	}
+	
+	.filterTitle {
+		display:block;
+	}
+	
+	.itemsLine {
+		display:none;
+	}
+
+}

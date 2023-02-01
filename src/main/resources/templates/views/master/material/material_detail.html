@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/master_nav">
+
+<th:block layout:fragment="css"></th:block>
+
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script"></th:block>
+
+<div layout:fragment="content">
+	<div class="justify-content-center row bg-light">
+		<div class="col-12 p-3"></div>
+		
+		<div class="col-md-8">
+			<span>상품</span>
+		</div>
+		<div class="col-12 p-3"></div>
+		
+		<div class="col-md-8">
+			<input type="hidden" name="no" th:value="${material.no}">
+			
+			<div class="p-3"></div>
+			<table class="table">
+				<tr>
+					<th scope="col">*분류코드</th>
+					<td>
+						<span th:text="${material.cbCode}"></span>
+					</td>
+					<!-- <th scope="col">*등록일</th>
+					<td>
+						
+					</td> -->
+				</tr>
+			</table>
+			<div class="col-12 p-5"></div>	
+
+			<div class="col-12">
+				썸네일
+			</div>
+			<div class="p-3"></div>
+			<table class="table">
+				<tr>
+					<th>*대표 자재</th>
+					<td>
+						<span th:text="${material.mainImage.thumbnailName}"></span>
+					</td>
+					<td rowspan="2">
+						<img th:src="@{ '/image_storage/' + ${material.mainImage.thumbnailPath} +'/'+ ${material.mainImage.thumbnailName}}"
+						class="_reg_image_preview" alt="자재 이미지" id="mainMaterialImagePreview" style="width: 150px; height: 150px;">
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">칼라톤</th>					
+					<td>
+						<!-- 메인 색상 -->
+						<div class="row p-0 m-0">
+							<div th:style="'background-color:'+${material.mtColors[0].colorHex} +';width:50px; height:50px; border-radius:50%; margin-bottom: 10px;'" id="mainColor"></div>
+       					</div>
+       					<span th:text="${material.mtColors[0].colorHex}"></span>
+						<!-- 부가 색상 -->
+       					<div class="row p-0 m-0">
+							<div th:style="'background-color:'+${material.mtColors[1].colorHex} +';width:50px; height:50px; border-radius:50%; margin-bottom: 10px;'" id="ColorSector_1"></div>
+							<div th:style="'background-color:'+${material.mtColors[2].colorHex} +';width:50px; height:50px; border-radius:50%; margin-bottom: 10px;'" id="ColorSector_2"></div>
+       					</div>
+       					<span th:text="${material.mtColors[1].colorHex}"></span>
+       					<span th:text="${material.mtColors[2].colorHex}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">*대표색상</th>
+					<td colspan="2">
+						<span th:text="${material.mtSpec.mainColor.mainColorName}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th>대표 조감도</th>
+					<th:block th:if="${material.viewImage!=null}">
+						<td>
+							<span th:text="${material.viewImage.thumbnailName}"></span>
+						</td>
+						<td rowspan="2">
+							<img th:src="@{ '/image_storage/' + ${material.viewImage.thumbnailPath} +'/'+ ${material.viewImage.thumbnailName}}"
+							class="_reg_image_preview" alt="조감도 이미지" id="mainViewImagePreview" style="width: 150px; height: 150px;">
+						</td>
+					</th:block>
+					<th:block th:if="${material.viewImage==null}">
+						<td>
+							<span>등록 파일 없음</span>
+						</td>
+						<td rowspan="2">
+							<img src="" class="_reg_image_preview" alt="조감도 이미지" id="mainViewImagePreview" style="width: 150px; height: 150px;">
+						</td>
+					</th:block>
+				</tr>
+			</table>
+			
+			<!-- <div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>상품 컨텐츠</span>
+			</div>
+			<div class="col-12 p-3"></div>	
+			<table class="table">
+				<tr>
+					<th th:rowspan="${#lists.size(material.images)}">상세 이미지 (<span th:text="${#lists.size(material.images)}"></span>)</th>
+					<td>
+						<img th:src="${#lists.size(material.images)>0} ? @{ '/image_storage/' + ${material.images[0].thumbnailPath} +'/'+ ${material.images[0].thumbnailName}} : ''" 
+							class="_reg_image_preview" alt="이미지" id="mtImagePreview0" style="width: 50px; height: 50px;">
+					</td>
+					<td>
+						<span th:text="${#lists.size(material.images)>0} ? ${material.images[0].thumbnailName} : '파일 없음'"></span>
+					</td>
+				</tr>
+				<th:block th:each="subImage, index : ${material.images}">
+					<th:block th:if="${index.count > 1}">
+						<tr>
+							<td>
+								<img th:src="@{ '/image_storage/' + ${subImage.thumbnailPath} +'/'+ ${subImage.thumbnailName}}"
+								 class="_reg_image_preview" alt="이미지" style="width: 50px; height: 50px;">
+							</td>
+							<td>
+								<span th:text="${subImage.thumbnailName}"></span>
+							</td>
+						</tr>
+					</th:block>
+				</th:block>
+			</table> -->
+			
+			<div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>연출 예시(<span th:text="${#lists.size(material.vrViewImages)}"></span>)</span>
+			</div>
+			<div class="col-12 p-3"></div>
+			<table class="table" id="vrViewTable">
+				<tr>
+					<th>미리보기</th>
+					<th>파일명</th>
+					<th>캡션</th>
+				</tr>
+				<th:block th:each="image, index : ${material.vrViewImages}">
+					<tr>
+						<td>
+							<img th:src="@{ '/image_storage/' + ${image.thumbnailPath} +'/'+ ${image.thumbnailName}}"
+							 class="_reg_image_preview" alt="이미지" style="width: 50px; height: 50px;">
+						</td>
+						<td>
+							<span th:text="${image.thumbnailName}"></span>
+						</td>
+						<td>
+							<span th:text="${image.caption}"></span>
+						</td>
+					</tr>
+				</th:block>
+			</table>
+			
+			<div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>시공 후기(<span th:text="${#lists.size(material.realConsImages)}"></span>)</span>
+			</div>
+			<div class="col-12 p-3"></div>
+			<table class="table" id="realConsTable">
+				<tr>
+					<th>미리보기</th>
+					<th>파일명</th>
+					<th>캡션</th>
+				</tr>
+				<th:block th:each="image, index : ${material.realConsImages}">
+					<tr>
+						<td>
+							<img th:src="@{ '/image_storage/' + ${image.thumbnailPath} +'/'+ ${image.thumbnailName}}"
+							 class="_reg_image_preview" alt="이미지" style="width: 50px; height: 50px;">
+						</td>
+						<td>
+							<span th:text="${image.thumbnailName}"></span>
+						</td>
+						<td>
+							<span th:text="${image.caption}"></span>
+						</td>
+					</tr>
+				</th:block>
+			</table>
+			
+			<div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>실제 시공 링크</span>
+			</div>
+			<div class="col-12 p-3"></div>
+			<table class="table" id="linkImageTable">
+				<tr>
+					<th>배너</th>
+					<th>파일명</th>
+					<th>링크 URL</th>
+				</tr>
+				<th:block th:if="${material.linkImage!=null}">
+					<tr>
+						<td>
+							<img th:src="@{ '/image_storage/' + ${material.linkImage.thumbnailPath} +'/'+ ${material.linkImage.thumbnailName}}" 
+								class="_reg_image_preview" id="mtImagePreviewLinkImage" style="width: 50px; height: 50px;">
+						</td>
+						<td>
+						<span th:text="${material.linkImage.thumbnailName}"></span>
+						</td>
+						<td>
+							<span th:text="${material.linkImage.linkAddr}"></span>
+						</td>
+					</tr>
+				</th:block>
+			</table>
+			
+			<!-- 
+			<div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>가상 제품 이미지(<span th:text="${#lists.size(material.vrProductImages)}"></span>)</span>
+			</div>
+			<div class="col-12 p-3"></div>
+			<table class="table" id="vrProductTable">
+				<tr>
+					<th>미리보기</th>
+					<th>파일명</th>
+					<th>캡션</th>
+				</tr>
+				<th:block th:each="image, index : ${material.vrProductImages}">
+					<tr>
+						<td>
+							<img th:src="@{ '/image_storage/' + ${image.thumbnailPath} +'/'+ ${image.thumbnailName}}"
+							 class="_reg_image_preview" alt="이미지" style="width: 50px; height: 50px;">
+						</td>
+						<td>
+							<span th:text="${image.thumbnailName}"></span>
+						</td>
+						<td>
+							<span th:text="${image.caption}"></span>
+						</td>
+					</tr>
+				</th:block>
+			</table> -->
+			
+			<div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>제품 디테일(<span th:text="${#lists.size(material.realProductImages)}"></span>)</span>
+			</div>
+			<div class="col-12 p-3"></div>
+			<table class="table" id="realProductTable">
+				<tr>
+					<th>미리보기</th>
+					<th>파일명</th>
+					<th>캡션</th>
+				</tr>
+				<th:block th:each="image, index : ${material.realProductImages}">
+					<tr>
+						<td>
+							<img th:src="@{ '/image_storage/' + ${image.thumbnailPath} +'/'+ ${image.thumbnailName}}"
+							 class="_reg_image_preview" alt="이미지" style="width: 50px; height: 50px;">
+						</td>
+						<td>
+							<span th:text="${image.thumbnailName}"></span>
+						</td>
+						<td>
+							<span th:text="${image.caption}"></span>
+						</td>
+					</tr>
+				</th:block>
+			</table>
+			
+			<div class="col-12 p-5"></div>
+				
+			<div class="col-12">
+				<span>동영상</span>
+			</div>
+			<div class="col-12 p-3"></div>
+			<table class="table">
+				<tr>
+					<th>URL 링크주소</th>
+					<td>
+						<span th:text="${material.mtContents.videoUrl}"></span>
+					</td>
+				</tr>
+			</table>
+			
+			<div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>상품 기본 정보</span>
+			</div>
+			<div class="col-12 p-3"></div>	
+			<table class="table">
+				<tr>
+					<th scope="col">*상품명</th>
+					<td colspan="3">
+						<span th:text="${material.cbName}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th rowspan="3">*상품 분류</th>
+					<td colspan="3">
+						<span th:text="${material.mtClass.classLg.className}"></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<span th:text="${material.mtClass.classMd}"></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<span th:text="${material.mtClass.classSm}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th rowspan="3">라벨</th>
+					<td>
+						<th:block th:if="${material.mtContents.productLabelView}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtContents.productLabelView}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+						<label for="product_label_view">바닥 시공</label>
+					</td>
+					<td>
+						<th:block th:if="${material.mtContents.mdpickLabelView}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtContents.mdpickLabelView}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+						<label for="mdpick_label_view">MD pick</label>
+					</td>
+					<td>
+						<th:block th:if="${material.mtContents.monthDealLabelView}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtContents.monthDealLabelView}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+						<label for="month_deal_label_view">이달의 딜</label>
+					</td>
+				</tr>
+			</table>
+			
+			
+			<div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>판매 정보</span>
+			</div>
+			<div class="col-12 p-3"></div>
+			<table class="table">
+				<tr>
+					<th scope="col">*원가</th>
+					<td>
+						<span th:text="${material.mtSales.costPrice}"></span>
+					</td>
+					<td>원/m<sup>2</sup></td>
+				</tr>
+				<tr>
+					<th scope="col">*정가</th>
+					<td>
+						<span th:text="${material.mtSales.consumerPrice}"></span>
+					</td>
+					<td>원/m<sup>2</sup></td>
+				</tr>
+				<tr>
+					<th scope="col">*판매가</th>
+					<td>
+						<span th:text="${material.mtSales.salesPrice}"></span>
+					</td>
+					<td>원/m<sup>2</sup></td>
+				</tr>
+				</table>
+				
+				<div class="col-12 p-5"></div>	
+				<div class="col-12">
+					<span>포장 단위</span>
+				</div>
+				<div class="col-12 p-3"></div>
+				<table class="table">
+				<tr>
+					<th scope="col">*헤베수</th>
+					<td>
+						<span th:text="${material.mtPkg.meter2Box}"></span>
+					</td>
+					<td>m2/box</td>
+				</tr>
+				<tr>
+					<th scope="col">*수량</th>
+					<td>
+						<span th:text="${material.mtPkg.pcsBox}"></span>
+					</td>
+					<td>pcs/box</td>
+				</tr>
+				<tr>
+					<th scope="col">*무게</th>
+					<td>
+						<span th:text="${material.mtPkg.kgBox}"></span>
+					</td>
+					<td>kg/box</td>
+				</tr>
+				<tr>
+					<th scope="col">*포장 단위</th>
+					<td>
+						<span th:text="${material.mtPkg.boxPlt}"></span>
+					</td>
+					<td>box/PLT</td>
+				</tr>
+			</table>
+			
+			
+			<div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>재고 정보</span>
+			</div>
+			<div class="col-12 p-3"></div>
+			<table class="table">
+				<tr>
+					<th scope="col">재고수량</th>
+					<td>
+						<span th:text="${material.mtSales.stock}"></span>
+					</td>
+				</tr>
+			</table>
+			
+			<div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>제품 규격</span>
+			</div>
+			<div class="col-12 p-3"></div>	
+			<table class="table">
+				<tr>
+					<th scope="col" rowspan="3">사이즈</th>
+					<th scope="col">*가로</th>
+					<td>
+						<span th:text="${material.mtStd.sizeW}"></span>
+					</td>
+					<td>mm</td>
+				</tr>
+				<tr>
+					<th scope="col">*세로</th>
+					<td>
+						<span th:text="${material.mtStd.sizeH}"></span>
+					</td>
+					<td>mm</td>
+				</tr>
+				<tr>
+					<th scope="col">두께</th>
+					<td>
+						<span th:text="${material.mtStd.thick}"></span>
+					</td>
+					<td>mm</td>
+				</tr>
+			</table>
+			
+			<div class="col-12 p-5"></div>
+			<div class="col-12">
+				<span>시공 가능 공간</span>
+			</div>
+			<div class="col-12 p-3"></div>
+			<table class="table">
+				<tr>
+					<td>
+						<label for="mtSpace.outPossible">실외</label>
+						<th:block th:if="${material.mtSpace.outPossible}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtSpace.outPossible}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+					</td>
+					<td>
+						<label for="mtSpace.inPossible">실내</label>
+						<th:block th:if="${material.mtSpace.inPossible}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtSpace.inPossible}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="mtSpace.roomFloor">방 바닥</label>
+						<th:block th:if="${material.mtSpace.roomFloor}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtSpace.roomFloor}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+					</td>
+					<td>
+						<label for="mtSpace.roomWall">방 벽</label>
+						<th:block th:if="${material.mtSpace.roomWall}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtSpace.roomWall}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="mtSpace.kichFloor">주방 바닥</label>
+						<th:block th:if="${material.mtSpace.kichFloor}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtSpace.kichFloor}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+					</td>
+					<td>
+						<label for="mtSpace.kichWall">주방 벽</label>
+						<th:block th:if="${material.mtSpace.kichWall}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtSpace.kichWall}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="mtSpace.toilFloor">화장실 바닥</label>
+						<th:block th:if="${material.mtSpace.toilFloor}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtSpace.toilFloor}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+					</td>
+					<td>
+						<label for="mtSpace.toilWall">화장실 벽</label>
+						<th:block th:if="${material.mtSpace.toilWall}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtSpace.toilWall}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="mtSpace.balcFloor">베란다 바닥</label>
+						<th:block th:if="${material.mtSpace.balcFloor}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtSpace.balcFloor}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+					</td>
+					<td>
+						<label for="mtSpace.balcWall">베란다 벽</label>
+						<th:block th:if="${material.mtSpace.balcWall}">
+							<i class="fa fa-check-square text-primary" aria-hidden="true"></i>
+						</th:block>
+						<th:block th:if="!${material.mtSpace.balcWall}">
+							<i class="fa fa-square-o" aria-hidden="true"></i>
+						</th:block>
+					</td>
+				</tr>
+			</table>
+			
+			<div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>제품 속성</span>
+			</div>
+			<div class="col-12 p-3"></div>	
+			<table class="table">
+				<tr>
+					<th scope="col">풀바디</th>
+					<td>
+						<th:block th:if="${material.mtSpec.fullbody}">
+							<label for="mtSpec.fullbodyTrue">해당</label>
+						</th:block>
+						<th:block th:if="!${material.mtSpec.fullbody}">
+							<label for="mtSpec.fullbodyFalse">해당없음</label>
+						</th:block>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">논슬립</th>
+					<td>
+						<th:block th:if="${material.mtSpec.nonslip}">
+							<label for="mtSpec.fullbodyTrue">해당</label>
+						</th:block>
+						<th:block th:if="!${material.mtSpec.nonslip}">
+							<label for="mtSpec.fullbodyFalse">해당없음</label>
+						</th:block>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">*표면 재질</th>
+					<td colspan="3">
+						<span th:text="${material.mtSpec.surface}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">표면 질감</th>
+					<td colspan="3">
+						<span th:text="${material.mtSpec.surfaceTexture.sfTextureName}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">*패턴 종류</th>
+					<td colspan="3">
+						<span th:text="${material.mtSpec.pattern}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">*패턴 수</th>
+					<td colspan="3">
+						<span th:text="${material.mtSpec.patternNum}"></span>
+					</td>
+				</tr>
+
+				<tr>
+					<th scope="col" rowspan="2">*방수성</th>
+					<th scope="col">*방수 여부</th>
+					<td>
+						<th:block th:if="${material.mtPf.waterAbsrp}">
+							<label for="mtSpec.fullbodyTrue">가능</label>
+						</th:block>
+						<th:block th:if="!${material.mtPf.waterAbsrp}">
+							<label for="mtSpec.fullbodyFalse">불가능</label>
+						</th:block>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">흡수율 (11.0~15.0)</th>
+					<td colspan="2">
+						<span th:text="${material.mtPf.waterAbsrpRate}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">미끄럼 저항성(R)</th>
+					<td colspan="3">
+						<span th:text="${material.mtPf.resist}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">인증</th>
+					<td colspan="3">
+						<span th:text="${material.mtPf.certified}"></span>
+					</td>
+				</tr>
+			</table>
+			
+			<div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>배송 정보</span>
+			</div>
+			<div class="col-12 p-3"></div>
+			
+			<table class="table">
+				<tr>
+					<th scope="col">*상품 개별 구매</th>
+					<td>
+						<th:block th:if="${material.mtDelv.excPurchase}">
+							<label for="mtSpec.fullbodyTrue">가능</label>
+						</th:block>
+						<th:block th:if="!${material.mtDelv.excPurchase}">
+							<label for="mtSpec.fullbodyFalse">불가능</label>
+						</th:block>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">배송 방법</th>
+					<td>
+						<th:block th:if="${material.mtDelv.howDelv}=='택배'">
+							<label for="">택배</label>
+						</th:block>
+						<th:block th:if="${material.mtDelv.howDelv}=='화물'">
+							<label for="">화물</label>
+						</th:block>
+						<th:block th:if="${material.mtDelv.howDelv}=='불가능'">
+							<label for="">불가능</label>
+						</th:block>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">지불 방법</th>
+					<td>
+						<th:block th:if="${material.mtDelv.prepayDelv}=='선불'">
+							<label for="">선불</label>
+						</th:block>
+						<th:block th:if="${material.mtDelv.prepayDelv}=='착불'">
+							<label for="">착불</label>
+						</th:block>
+						<th:block th:if="${material.mtDelv.prepayDelv}=='불가능'">
+							<label for="">불가능</label>
+						</th:block>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">택배비</th>
+					<td>
+						<span th:text="${material.mtDelv.pay}"></span>
+					</td>
+					<td>원/box</td>
+				</tr>
+			</table>
+			
+			<div class="col-12 p-5"></div>	
+			<div class="col-12">
+				<span>유통 정보</span>
+			</div>
+			<div class="col-12 p-3"></div>	
+			<table class="table">
+				<tr>
+					<th scope="col">*생산 국가</th>
+					<td>
+						<span th:text="${material.mtDtd.country.countryName}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">*유통업체명</th>
+					<td>
+						<span th:text="${material.mtDtd.dtdComNo}"></span>
+					</td>
+					<th scope="col">업체 사이트 URL</th>
+					<td>
+						<span th:text="${material.mtDtd.dtdComUrl}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">*업체상품명</th>
+					<td>
+						<span th:text="${material.mtDtd.dtdMtName}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">*업체분류코드</th>
+					<td>
+						<span th:text="${material.mtDtd.dtdCode}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">제조업체명</th>
+					<td>
+						<span th:text="${material.mtDtd.mfcComNo}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">브랜드명</th>
+					<td>
+						<span th:text="${material.mtDtd.brandName}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th scope="col">*상품출고지</th>
+					<td>
+						<span th:text="${material.mtDtd.wareHouse}"></span>
+					</td>
+				</tr>
+			</table>
+			<div class="col-12 p-4"></div>	
+			<div class="">
+				<b>검색 키워드 </b><!-- <small>(키워드 입력 후 enter 혹은 focus out)</small> -->
+			</div>
+			<!-- <div class="col-12 p-3"></div> -->
+			<div class="col-12">
+				<div class="row">
+					<th:block th:each="mtTag : ${material.mtContents.mtTags}">
+						<h3>
+							<span class="badge badge-secondary" th:text="${mtTag.tagName}">New</span>
+						</h3>
+						&nbsp;
+					</th:block>
+				</div>
+			</div>
+			
+			<div class="col-12 p-4"></div>	
+			
+			<table class="table">
+				<tr>
+					<th scope="col">*노출 여부</th>
+					<td>
+						<th:block th:if="${material.dpMaterial}!=null">
+							<label for="mtSpec.fullbodyTrue">노출</label>
+						</th:block>
+						<th:block th:if="${material.dpMaterial}==null">
+							<label for="mtSpec.fullbodyFalse">비노출</label>
+						</th:block>
+					</td>
+				</tr>
+			</table>
+			
+			<div class="col-12 p-3"></div>
+			<a class="btn btn-info m-1" th:href="@{${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MATERIAL_UPDATE}+'?no=' + ${material.no} }">수정하기</a>
+		
+		</div>
+		<div class="col-12 p-3"></div>
+	
+	</div>
+</div>
+
+</html>

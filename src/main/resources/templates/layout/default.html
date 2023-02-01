@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/config :: configFragment"></head>
+
+<header th:replace="fragments/header :: headerFragment"></header>
+
+<div layout:fragment="content" class="col-lg-12 p-0"></div>
+
+<div th:replace="fragments/remote :: remoteFragment"></div>
+
+<footer th:replace="fragments/footer :: footerFragment"></footer>
+
+<th:block th:replace="fragments/analytics/naver_config :: naverConfigFragment"></th:block>
+<th:block th:replace="fragments/analytics/beusable_config :: beusableConfigFragment"></th:block>
+
+</html>

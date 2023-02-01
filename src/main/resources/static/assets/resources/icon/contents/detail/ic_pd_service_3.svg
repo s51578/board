@@ -1,0 +1,12 @@
+<svg id="ic_pd_service_3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:#2a534c}
+        </style>
+    </defs>
+    <path id="사각형_161032" data-name="사각형 161032" class="cls-1" d="M2 2v14h14V2H2M0 0h18v18H0z" transform="translate(3 3)"/>
+    <path id="선_695" data-name="선 695" class="cls-1" d="M1 16h-2V0h2z" transform="translate(9.5 4)"/>
+    <path id="선_696" data-name="선 696" class="cls-1" d="M1 16h-2V0h2z" transform="translate(14.5 4)"/>
+    <path id="선_697" data-name="선 697" class="cls-1" d="M16 1H0v-2h16z" transform="translate(4 9.5)"/>
+    <path id="선_698" data-name="선 698" class="cls-1" d="M16 1H0v-2h16z" transform="translate(4 14.5)"/>
+</svg>

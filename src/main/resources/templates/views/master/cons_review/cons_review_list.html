@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/master_nav">
+
+<th:block layout:fragment="css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" type="text/css" />
+</th:block>
+
+<th:block layout:fragment="script">
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+	<script type="text/javascript" src="/assets/js/component/master/consreview/consreview_table.js"></script>
+</th:block>
+
+
+<div layout:fragment="content">
+	<div class="justify-content-center row bg-white">
+		<div class="col-12 p-3"></div>
+		<div class="col-10">
+			<span>시공사례 리스트</span>
+		</div>
+
+		<div class="col-12 p-3"></div>
+		<div class="col-10">
+			<table id="crTable" class="table">
+				<thead>
+				<tr>
+					<th scope="col">번호</th>
+					<th scope="col">작성자</th>
+					<th scope="col">제목</th>
+					<th scope="col">등록날짜</th>
+					<th scope="col">옵션</th>
+				</tr>
+				</thead>
+				<tbody>
+				<th:block th:each="consReview : ${consReviewLists}">
+					<tr>
+						<td th:text="${consReview.consReviewNo}"></td>
+						<td th:text="${consReview.consReviewWriter}"></td>
+						<td>
+						<a th:href="@{${T(com.connect.brick.config.RequestMappingConstants)._MASTER_CONS_REVIEW_DETAIL}+'?no=' + ${consReview.consReviewNo}}"> 
+						<span th:text="${consReview.consReviewTitle}"></span>
+						</a>
+						</td>
+						<td th:text="${consReview.cosReviewFormatDate}"></td>
+						<td>
+							<a th:href="@{${T(com.connect.brick.config.RequestMappingConstants)._MASTER_CONS_REVIEW_UPDATE}+'?no=' + ${consReview.consReviewNo} }">수정</a>
+							 | <a th:href="@{${T(com.connect.brick.config.RequestMappingConstants)._MASTER_CONS_REVIEW_DEL}+'?no=' + ${consReview.consReviewNo} }" onclick="if(!confirm('삭제하시겠습니까?')){return false;}">삭제</a>
+						</td>
+					</tr>
+					
+				</th:block>
+				</tbody>
+			</table>
+			<div class="col-12 p-3"></div>
+			<a class="btn btn-primary" th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_CONS_REVIEW_CREATE}">새로 등록</a>
+			<a class="btn btn-primary" th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_MAIN}">관리자메인</a>
+		</div>
+		<div class="col-12 p-3"></div>
+	</div>
+</div>
+
+</html>

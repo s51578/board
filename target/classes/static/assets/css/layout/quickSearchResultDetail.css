@@ -1,0 +1,596 @@
+.detailCounselingBtn {
+	height:56px;
+	max-width: 575px;
+    min-width: 320px;
+	position: fixed;
+  	bottom: 0;
+	background-color: #2a534c;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--default-font);
+ 	font-size: 16px;
+  	font-weight: 800;
+  	color: #ffe0dd;
+}
+
+.detailHeaderText {
+  font-family: var(--default-font);
+  font-size: 17px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  color: #ffe0dd;
+}
+.detailShareBtn {
+	display:flex;
+	margin-left: auto;
+	margin-right: 16px;
+}
+
+.detailHeaderCenter {
+	display:flex;
+	justify-content: center;
+}
+
+.detailApt {
+	padding-top:24px;
+}
+
+.detailAptImg {
+	margin-left: 16px;
+}
+
+.detailAptName {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+	font-family: var(--default-font);
+	font-size: 20px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+}
+
+.detailAptAddress {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+	font-family: var(--default-font);
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	color: #a8a8a8;
+
+}
+
+.detailType {
+	margin-top:36px;
+	margin-left:16px;
+	margin-right:16px;
+	height:48px;
+	border: solid 1px #2a534c;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.detailTypeText {
+	margin-right: 6px;
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 18px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    color: #2a534c;
+    line-height: 1.56;
+    letter-spacing: -0.45px;
+}
+
+.detailRoom {
+	margin-top:24px;
+	margin-bottom: 24px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.detailRoomText {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.07;
+    letter-spacing: -0.45px;
+    text-align: left;
+    color: #a8a8a8;
+}
+
+.detailRoomInfo {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.07;
+    letter-spacing: -0.45px;
+    text-align: left;
+    color: #2a534c;
+    margin-right: 14px;
+}
+
+.detailRoomInfoDev {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.07;
+    letter-spacing: -0.45px;
+    text-align: left;
+    color: #2a534c;
+}
+
+.graySm {
+	height:10px;
+    background-color: #ededed;
+}
+
+.detailTileText {
+	margin-top:32px;
+	margin-bottom: 12px;
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+.subjectText19px {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+	font-family: var(--default-font);
+	font-size: 19px;
+	font-weight: 800;
+	font-stretch: normal;
+	font-style: normal;
+	text-align: left;
+	color: #000;
+}
+
+.detailTile {
+	margin-left: 16px;
+	margin-right: 16px;
+	margin-bottom: 24px;
+}
+
+.detailTileImg {
+	padding-right: 20px;
+	width: 118px;
+	height:118px;
+}
+
+.tileChange {
+	margin-bottom: 32px;
+}
+
+.areaChangeSubText {
+	font-family: var(--default-font);
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.38px;
+    text-align: left;
+    color: #a8a8a8;
+}
+
+.tileAreaSubText {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 17px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.43px;
+    text-align: left;
+    color: #757575;
+}
+
+.tileAreaSubText.highlight {
+	color: #ff5d4f;
+}
+
+.tileAreaSubPrice {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 17px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.43px;
+    text-align: right;
+    color: #fd5d4f;
+}
+
+.textRight {
+	text-align: right;
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+	font-family: var(--default-font);
+	font-size: 17px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.53;
+	letter-spacing: -0.43px;
+	text-align: right;
+	color: #000;
+}
+
+.alertText {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+	font-family: var(--default-font);
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    text-align: left;
+    color: #fd5d4f;
+    opacity: 0;
+}
+
+.line {
+	height:1px;
+	background-color: #ededed;
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+.tileAreaPadding {
+	padding-top:22px;
+	padding-bottom:22px;
+	
+}
+
+.tileAreaPadding.isAlertText {
+	padding-bottom: 0px;
+}
+
+.tileAreaSubjectSubText {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    text-align: left;
+    color: #a8a8a8;
+}
+
+.unable {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 17px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    text-align: right;
+    color: #757575;
+}
+
+.constructionNotice {
+	background-color: #f5f5f5;
+	padding-left:24px;
+	padding-top:24px;
+	padding-bottom: 14px;
+	margin-top: 13px;
+	margin-left: 16px;
+	margin-right: 16px;
+	margin-bottom: 32px;
+}
+
+.noticeHeader {
+	display:block;
+	font-family: var(--default-font);
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.45px;
+    text-align: left;
+    color: #fd5d4f;
+    margin-bottom: 16px;
+}
+
+.noticeText {
+	display:block;
+	font-family: var(--default-font);
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: -0.45px;
+    text-align: left;
+    color: #fd5d4f;
+    margin-bottom:10px;
+}
+
+.grayNormal {
+	height:32px;
+	background-color: #ededed;
+}
+
+.detailEstimate {
+	padding-top:40px;
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+.detailEstimateText17px {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 17px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    text-align: left;
+    color: #777;
+}
+
+.detailEstimateArea {
+	margin-top:32px;
+	margin-bottom:20px;
+}
+
+.detailEstimateLine {
+	height: 1px;
+	background-color: #ededed;
+}
+
+.detailEstimateArticle {
+	padding-top:20px;
+	padding-bottom: 20px;
+}
+
+.detailEstimateArticleSm {
+	padding-top:24px;
+}
+
+.detailEstimateArticleSsm {
+	padding-top:16px;
+}
+
+.detailEstimateText13px {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    text-align: left;
+    color: #a8a8a8;
+}
+
+.disBlock {
+	display:block;
+}
+
+.lineMargin {
+	margin-top:20px;
+	margin-bottom:4px;
+}
+
+.totalEstimateText {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 21px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: -0.53px;
+    text-align: left;
+    color: #000;
+}
+
+.totalPriceText {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 28px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    text-align: right;
+    color: #fd7258;
+}
+
+.realEstimateMsgDiv {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	
+	height:66px;
+	margin-top:32px;
+	background-color: #efefef;
+	text-align: center;
+}
+
+.realEstimateText13px {
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+    font-family: var(--default-font);
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    display:inline-block;
+    line-height: 0.7;
+    color: #000;
+}
+
+.backBtn {
+	display:flex;
+	margin-left:16px;
+	margin-right:auto;
+}
+
+/* ���씪 遺�遺� */
+.aptTileSearchContainer {
+	margin-top: 12px;
+}
+
+.aptTileCard {
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.aptTileCard__name {
+	margin-top: 10px;
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+	font-family: var(--default-font);
+	font-size: 15px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.73;
+	letter-spacing: -0.38px;
+	text-align: left;
+	color: #000;
+}
+
+.aptTileCard__spec {
+	margin-top: 8px;
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0);
+	font-family: var(--default-font);
+	font-size: 13px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.15;
+	letter-spacing: -0.33px;
+	text-align: left;
+	color: #757575;
+}
+
+.aptTileCard__salesPrice--div {
+	margin-top: 11px;
+}
+
+.aptTileCard__salesPrice__div--percent {
+	font-family: var(--default-font);
+	font-size: 16px;
+	font-weight: 800;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.63;
+	letter-spacing: -0.4px;
+	text-align: left;
+	color: #ff7258;
+}
+
+.aptTileCard__salesPrice__div--text {
+	font-family: var(--default-font);
+	font-size: 16px;
+	font-weight: 800;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.56;
+	letter-spacing: -0.4px;
+	text-align: left;
+	color: #000;
+}
+
+.aptTileCard__salesPrice__div--unit {
+	font-family: var(--default-font);
+	font-size: 14px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.79;
+	letter-spacing: -0.35px;
+	text-align: left;
+	color: #000;
+}
+.aptTileCard__img--div {
+	position: relative;
+}
+
+.aptTileCard__img--div.selected {
+	border: solid 2px rgba(253, 114, 88, 0.7);
+}
+
+.aptTileCard__img--div.selected .aptTileCard__img__check--img {
+	content:url(/assets/resources/image/quickSearch/bt_apt_list_check_s.svg);
+}
+
+.aptTileCard__img__check--img {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	content:url(/assets/resources/image/quickSearch/bt_apt_list_check_n.svg);
+}
+
+.md {
+	width:40px;
+	/* height:17px; */
+}
+
+
+/* ���씪 遺�遺� */
+/* �샇踰� �븸�떚釉� */
+/* .roomBtnDiv img:last-child{display:none} */
+/* .roomBtnDiv:hover img:first-child{display:none}
+.roomBtnDiv:hover img:last-child{display:inline-block} */
+.verandaBtnDiv img:last-child{display:none}
+/* .verandaBtnDiv:hover img:first-child{display:none}
+.verandaBtnDiv:hover img:last-child{display:inline-block} */
+.detailShareBtn:hover {cursor:pointer}
+.detailShareBtn:active {cursor:pointer}
+.backBtn:hover{cursor:pointer}
+.backBtn:active{cursor:pointer}
+
+.detailCounselingBtn:hover {
+	color: #ffe0dd;
+	cursor: pointer;
+	background-color: #154640;
+}
+
+.detailCounselingBtn:active {
+	color: #ffe0dd;
+	cursor: pointer;
+	background-color: #154640;
+}
+
+.areaHover:hover{cursor:pointer}
+.areaHover:active{cursor:pointer}
+.roomBtnDiv .roomSelected:first-child{display:none}
+.roomBtnDiv .roomSelected:last-child{display:inline-block}
+.roomBtnDiv .roomUnSelected:last-child{display:none}
+.roomBtnDiv .roomUnSelected:first-child{display:inline-block}
+.verandaBtnDiv .roomSelected:first-child{display:none}
+.verandaBtnDiv .roomSelected:last-child{display:inline-block}
+.verandaBtnDiv .roomUnSelected:last-child{display:none}
+.verandaBtnDiv .roomUnSelected:first-child{display:inline-block}
+
+.destroyBtnDiv .roomSelected:first-child{display:none}
+.destroyBtnDiv .roomSelected:last-child{display:inline-block}
+.destroyBtnDiv .roomUnSelected:last-child{display:none}
+.destroyBtnDiv .roomUnSelected:first-child{display:inline-block}
+
+.typeSelect:hover{
+	cursor:pointer;
+	background-color: #e9eded;
+}
+.typeSelect:active{
+	cursor:pointer;
+	background-color: #e9eded;
+}
+.tileChange:hover{
+	cursor:pointer;
+	background-color: #e9eded;
+}
+.tileChange:active{
+	cursor:pointer;
+	background-color: #e9eded;
+}
+.bathRoomBtn {
+	  opacity: 0.65; 
+ 	 cursor: not-allowed;
+}

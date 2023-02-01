@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	 xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<th:block th:fragment="beusableConfigFragment">
+	<script type="text/javascript">
+		(function(w, d, a) {
+			w.__beusablerumclient__ = {
+				load : function(src) {
+					var b = d.createElement("script");
+					b.src = src;
+					b.async = true;
+					b.type = "text/javascript";
+					d.getElementsByTagName("head")[0].appendChild(b);
+				}
+			};
+			w.__beusablerumclient__.load(a);
+		})(window, document,
+				"//rum.beusable.net/script/b220302e171644u067/a9ac5c7909");
+	</script>
+</th:block>
+
+</html>
+

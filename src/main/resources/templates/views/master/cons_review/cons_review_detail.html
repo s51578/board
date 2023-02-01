@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/master_nav">
+
+<div layout:fragment="content">
+	<div class="justify-content-center row bg-light">
+		<div class="col-12 p-3"></div>
+		
+		<div class="col-md-8">
+			<span>시공사례 정보</span>
+		</div>
+						
+		<div class="col-12 p-3"></div>
+		<div class="col-md-8">
+		
+			<table class="table">
+				
+				<tr>
+					<th>표지 사진</th>
+					<td>
+					<div>
+						<span th:text="${consReview.mainImage.thumbnailName}"></span>
+					</div>	
+					</td>
+					
+					<td rowspan="3">
+					
+						<img th:src="@{ '/image_storage/' + ${consReview.mainImage.thumbnailPath} +'/'+ ${consReview.mainImage.thumbnailName}}"
+						class="_reg_image_preview" alt="자재 이미지" id="mainImagePreview" style="width: 150px; height: 150px;">
+					
+					</td>
+				</tr>
+				
+				<tr>
+					<th>건물 유형</th>
+					<td>
+						<span th:text="${consReview.typeHouse}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th>시공 범위</th>
+					<td>
+						<th:block th:if="${consReview.isLivingFloor}==1">
+							<i class="fa fa-check-square text-primary"></i>
+						</th:block>
+						<th:block th:if="${consReview.isLivingFloor}!=1">
+							<i class="fa fa-square-o"></i>
+						</th:block>
+						<label for="product_label_view">거실 바닥</label>
+						<th:block th:if="${consReview.isKitchenFloor}==1">
+							<i class="fa fa-check-square text-primary"></i>
+						</th:block>
+						<th:block th:if="${consReview.isKitchenFloor}!=1">
+							<i class="fa fa-square-o"></i>
+						</th:block>
+						<label for="mdpick_label_view">주방 바닥</label>
+						<th:block th:if="${consReview.isRoomFloor}==1">
+							<i class="fa fa-check-square text-primary" ></i>
+						</th:block>
+						<th:block th:if="${consReview.isRoomFloor}!=1">
+							<i class="fa fa-square-o" ></i>
+						</th:block>
+						<label for="month_deal_label_view">방 바닥</label>
+					</td>
+				</tr>
+				<tr>
+					<th>평수</th>
+					<td>
+						<span th:text="${consReview.acreage}+'평'"></span>
+					</td>
+				</tr>
+				
+				<tr>
+					<th>시공 금액</th>
+					<td>
+						<span th:text="${consReview.cost}"></span>
+					</td>
+				</tr>
+				
+				<tr>
+					<th>시공 기간</th>
+					<td>
+						<span th:text="${consReview.period}"></span>
+					</td>
+				</tr>
+				
+				<tr>
+					<th>태그</th>
+					<td>
+						<span th:text="${consReview.tags}"></span>
+					</td>
+				</tr>
+			
+				<tr>
+					<th>시공 타일</th>
+					<td>
+						<span th:text="${consReview.mtContents.material.cbName}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th>주소</th>
+					<td>
+						<span th:text="${consReview.address}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th>제목</th>
+					<td>
+						<span th:text="${consReview.consReviewTitle}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th>작성자</th>
+					<td>
+						<span th:text="${consReview.consReviewWriter}"></span>
+					</td>
+				</tr>
+				</table>
+				</div>
+				
+				<div class="col-md-8">
+				<table class="table">
+				<tr>
+					<th>내용</th>
+					<td>
+						<span th:utext="${consReview.consReviewContents}"></span>
+					</td>
+				</tr>
+			</table>
+			<div class="col-12 p-3"></div>
+			<a th:href="@{${T(com.connect.brick.config.RequestMappingConstants)._MASTER_CONS_REVIEW_UPDATE}+'?no=' + ${consReview.consReviewNo}}" class="btn btn-primary">수정하기</a>
+			<a th:href="${T(com.connect.brick.config.RequestMappingConstants)._MASTER_CONS_REVIEW_LIST}" class="btn btn-info">목록으로</a>
+		</div>
+		<div class="col-12 p-3"></div>
+	</div>
+</div>
+
+</html>

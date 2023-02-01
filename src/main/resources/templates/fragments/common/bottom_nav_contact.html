@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="bottomNavContactFragment">
+	
+	<div class="bottom_nav_contact">
+		
+		<div class="bottom_nav_contact__ded_area">
+			<div class="bottom_nav_contact__ded_area__title">
+				<span class="bottom_nav_contact__ded_area__title--text"></span>
+			</div>
+			<div class="bottom_nav_contact__ded_area__service">
+				
+				<table class="bottom_nav_contact__ded_area__service--table">
+					<tr>
+						<td>
+							<img src="/assets/resources/icon/contents/detail/ic_pd_service_1.svg">
+							<span>프리미엄 타일 & 부자재</span>
+						</td>
+						<td>
+							<img src="/assets/resources/icon/contents/detail/ic_pd_service_2.svg">
+							<span>A급 전문 인력</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<img src="/assets/resources/icon/contents/detail/ic_pd_service_3.svg">
+							<span>고급 탄성 줄눈 시공</span>
+						</td>
+						<td>
+							<img src="/assets/resources/icon/contents/detail/ic_pd_service_4.svg">
+							<span>폐기물 처리</span>
+						</td>
+					</tr>
+				</table>
+				<!-- <div class="col">
+					<div class="row">
+						<div class="col">
+							
+						</div>
+						<div class="col">
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							
+						</div>
+						<div class="col">
+							
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		<div class="bottom_nav_contact__div align-middle">
+			<!-- <button type="button" class="bottom_nav_contact__div--btn" onclick="chatChannel();">선택한 타일 견적받기</button> --> <!-- 견적 상담 신청하기 -->
+			<a th:href="@{${T(com.connect.brick.config.RequestMappingConstants)._GOOGLE_FORM}+'?pno=' + ${contents.material.no}}" class="bottom_nav_contact__div--btn">
+				<span>이 타일로 간편 견적받기</span>
+			</a>
+		</div>
+	</div>
+	
+</th:block>
+
+</html>

@@ -1,0 +1,793 @@
+@charset "UTF-8";
+
+
+/*----------------------------------------------------------*/
+.dot {
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: #B1B1B1;
+	margin: 11px 10px 11px 10px;
+}
+/* 하단 슬라이더 css */
+._tile_card {
+	margin-right: 15px;
+	margin-left: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	box-shadow: 0px 3px 8px #25292F14;
+	border-radius: 12px;
+	border: 1px solid #E7EAF3;
+	opacity: 1;
+}
+
+._tile_img_box {
+	border-radius: 12px 12px 0 0;
+	/* position: relative; */
+	overflow: hidden;
+	width: 100%;
+	height: 190px;
+}
+
+.labels_box {
+	position: absolute;
+	top: 15px;
+	left: 25px;
+}
+
+.labels {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.mdPick_label {
+	z-index: 5;
+	width: 48px;
+    height: 21px;
+}
+
+.product_label {
+	z-index: 5;
+}
+
+.month_deal_label {
+	z-index: 5;
+}
+
+._tile_mainImg {
+	border-radius: 12px 12px 0px 0px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+._tile_img_box ._tile_mainImg {
+	transform:scale(1.0);
+	transition: transform.5s;
+}
+
+._tile_img_box ._tile_mainImg:hover {
+	transform:scale(1.2);
+	transition: transform.5s;
+}
+
+._tile_subImg {
+	width: 63px;
+	height: 63px;
+	border: 1px solid #FFFFFF80;
+	opacity: 1;
+	position: relative;
+	top: -45%;
+	left: 65%;
+	z-index: 5;
+	padding: 0px !important;
+	margin: 0px !important;
+	box-sizing: border-box;
+	background-size: cover;
+}
+
+@media screen and (max-width: 1199px) {
+	._tile_subImg {
+		left: 70%;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	._tile_subImg {
+		left: 70%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	._tile_subImg {
+		left: 60%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	._tile_subImg {
+		left: 78%;
+	}
+}
+
+@media screen and (max-width: 384px) {
+	._tile_subImg {
+		left: 75%;
+	}
+}
+
+._info_box {
+	padding: 4px 0 4px 0;
+}
+
+._title_box {
+	/* padding-bottom: 11px; */
+	cursor: pointer;
+}
+
+._contents_text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space:nowrap;
+	text-align: left;
+	font: normal normal bold 16px/30px var(--default-font);
+	letter-spacing: -0.4px;
+	color: #091627;
+	opacity: 1;
+}
+
+._price_box {
+	
+}
+
+._spec_box {
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 15px; /* 25px */
+}
+
+._spec_value {
+	text-align: left;
+	font: normal normal normal 13px/25px var(--default-font);
+	letter-spacing: -0.33px;
+	color: #676767;
+	opacity: 1;
+}
+
+._sales_percent_text {
+	text-align: left;
+	font: normal normal 800 16px/26px var(--default-font);
+	letter-spacing: -0.4px;
+	color: #FF7258;
+	opacity: 1;
+}
+
+._product_price {
+	text-align: left;
+	font: normal normal 800 16px/25px var(--default-font);
+	letter-spacing: -0.4px;
+	color: #000000;
+	opacity: 1;
+}
+
+._product_text {
+	text-align: left;
+	font: normal normal 800 13px/25px var(--default-font);
+	letter-spacing: -0.33px;
+	color: #000000;
+	opacity: 1;
+}
+
+/* 카드 툴팁 */
+.tooltips {
+	background: none;
+	border: none;
+	padding: 0px;
+}
+.tooltips:focus {
+	outline: none;
+}
+
+.tooltip-inner {
+	max-width: 284px;
+	text-align: left;
+	font: normal normal normal 12px/20px Spoqa Han Sans Neo;
+	letter-spacing: -0.6px;
+	color: #FFFFFF;
+	opacity: 1;
+}
+
+.main-slick-prev-arrow {
+	position: absolute;
+	right: 4%;
+	top: -16%;
+	outline: black;
+	background-size: 100%, 100%;
+	border: none;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.main-slick-next-arrow {
+	position: absolute;
+	right: 1%;
+	top: -16%;
+	outline: black;
+	background-size: 100%, 100%;
+	border: none;
+	z-index: 2;
+	cursor: pointer;
+}
+
+/*----------------------------------------------------------*/
+._bg_navy_top {
+	background-color: #091627;
+	height: 426px;
+	width: 100%;
+	z-index: -1;
+}
+
+.slider_right_margin {
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+.guide_card {
+	/* width: 255px !important;
+	width: 100%; */
+	height: 220px !important;
+	border-radius: 12px;
+	opacity: 1;
+}
+
+.guide_card_label {
+	text-align: left !important;
+	padding-top: 27px !important;
+	font: normal normal bold 14px/20px Spoqa Han Sans Neo !important;
+	letter-spacing: -0.7px !important;
+	color: #FFFFFF !important;
+	opacity: 0.5 !important;
+}
+
+.guide_card_img {
+	padding-left: 34px;
+	padding-right: 4px;
+	display: inline !important;
+}
+
+.guide_card_title {
+	text-align: left;
+	padding-top: 11px;
+	padding-left: 34px;
+	padding-right: 34px;
+	height: 86px;
+	font: normal normal bold 18px/28px Spoqa Han Sans Neo;
+	letter-spacing: -1.05px;
+	color: #FFFFFF;
+	opacity: 1;
+}
+
+.guide_card_footer {
+	text-align: left;
+	font: normal normal bold 14px/20px Spoqa Han Sans Neo;
+	letter-spacing: -0.7px;
+	color: #FFFFFF;
+	opacity: 1;
+	padding-left: 34px;
+	padding-bottom: 24px;
+	padding-top: 30px;
+}
+
+.guide_card_link_a {
+	font: normal normal bold 14px/20px Spoqa Han Sans Neo;
+	letter-spacing: -0.7px;
+	color: #FFFFFF;
+	opacity: 1;
+	text-decoration: none;
+}
+
+.guide_card_link_a:hover {
+	font: normal normal bold 14px/20px Spoqa Han Sans Neo;
+	letter-spacing: -0.7px;
+	color: #FFFFFF;
+	opacity: 1;
+	text-decoration: none;
+}
+
+.guide_card_link_a:link {
+	font: normal normal bold 14px/20px Spoqa Han Sans Neo;
+	letter-spacing: -0.7px;
+	color: #FFFFFF;
+	opacity: 1;
+	text-decoration: none;
+}
+
+.guide_card_link_a:active {
+	font: normal normal bold 14px/20px Spoqa Han Sans Neo;
+	letter-spacing: -0.7px;
+	color: #FFFFFF;
+	opacity: 1;
+	text-decoration: none;
+}
+
+.guide_card_link_a:visited {
+	font: normal normal bold 14px/20px Spoqa Han Sans Neo;
+	letter-spacing: -0.7px;
+	color: #FFFFFF;
+	opacity: 1;
+	text-decoration: none;
+}
+
+.guidebook_1 {
+	background: #4C64F2 0% 0% no-repeat padding-box;
+	transition-property: transform, box-shadow;
+	transition-duration: 0.3s;
+}
+
+.guidebook_2 {
+	background: #1697FF 0% 0% no-repeat padding-box;
+	transition-property: transform;
+	transition-duration: 0.3s;
+}
+
+.guidebook_3 {
+	background: #20A4AC 0% 0% no-repeat padding-box;
+	transition-property: transform;
+	transition-duration: 0.3s;
+}
+
+.guidebook_4 {
+	background: #0D6EB9 0% 0% no-repeat padding-box;
+	transition-property: transform;
+	transition-duration: 0.3s;
+}
+
+.guidebook_5 {
+	background: #3470FF 0% 0% no-repeat padding-box;
+	transition-property: transform;
+	transition-duration: 0.3s;
+}
+
+.guidebook_6 {
+	background: #107A96 0% 0% no-repeat padding-box;
+	transition-property: transform;
+	transition-duration: 0.3s;
+}
+
+.guidebook_7 {
+	background: #724CF2 0% 0% no-repeat padding-box;
+	transition-property: transform;
+	transition-duration: 0.3s;
+}
+
+.guidebook_1:hover {
+	transform: translateY(-10px);
+}
+
+.guidebook_2:hover {
+	transform: translateY(-10px);
+}
+
+.guidebook_3:hover {
+	transform: translateY(-10px);
+}
+
+.guidebook_4:hover {
+	transform: translateY(-10px);
+}
+
+.guidebook_5:hover {
+	transform: translateY(-10px);
+}
+
+.guidebook_6:hover {
+	transform: translateY(-10px);
+}
+
+.guidebook_7:hover {
+	transform: translateY(-10px);
+}
+
+._contents_container {
+	padding-top: 32px;
+}
+
+.b_line {
+	padding-bottom: 32px;
+	padding-top: 32px;
+	border-bottom: 1px solid #E7EAF3;
+	opacity: 1;
+}
+
+.guide_title {
+	text-align: left;
+	font: normal normal bold 26px/30px Spoqa Han Sans Neo;
+	/* font크기 가이드라인 = 30px */
+	letter-spacing: -0.6px;
+	color: #1F2022;
+	opacity: 1;
+	vertical-align: bottom;
+}
+
+.guide_sub_title {
+	text-align: left;
+	font: normal normal bold 24px/31px Spoqa Han Sans Neo;
+	letter-spacing: 0px;
+	color: #1F2022;
+	opacity: 1;
+}
+
+.title_padding {
+	padding-bottom: 32px;
+	padding-top: 30px;
+}
+
+.sub_title_padding {
+	padding-bottom: 32px;
+}
+
+._first_contents_padding {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+._second_contents_padding {
+	padding-top: 32px;
+	padding-bottom: 60px;
+}
+
+._third_contents_padding {
+	padding-bottom: 32px;
+}
+
+._fourth_contents_padding {
+	padding-bottom: 111px;
+}
+
+.box {
+	background: #F7FAFD 0% 0% no-repeat padding-box;
+	border: 1px solid #E7EBEF;
+	border-radius: 4px;
+	width: 68px;
+	height: 28px;
+	text-align: center;
+	opacity: 1;
+	margin-bottom: 24px;
+}
+
+._menu {
+	font: normal normal bold 14px/23px Spoqa Han Sans Neo;
+	letter-spacing: 0px;
+	color: #4571F7;
+	opacity: 1;
+}
+
+.tooltips {
+	text-align: left;
+	text-decoration: underline;
+	font: normal normal normal 16px/34px Spoqa Han Sans Neo;
+	/* 가이드북 18px */
+	letter-spacing: -0.36px;
+	color: #687889;
+	background: none;
+	border: none;
+	padding: 0px;
+}
+
+.guide_contents_menu {
+	text-align: left;
+	font: normal normal normal 16px/33px Spoqa Han Sans Neo;
+	letter-spacing: -0.32px;
+	color: #687888;
+	opacity: 1;
+}
+
+.guide_contents {
+	text-align: left;
+	font: normal normal normal 16px/34px Spoqa Han Sans Neo;
+	/* font크기 가이드 라인 = 18px */
+	letter-spacing: -0.36px;
+	color: #687888;
+	opacity: 1;
+}
+
+.guide_contents_small {
+	text-align: left;
+	font: normal normal normal 17px/34px Spoqa Han Sans Neo;
+	letter-spacing: -0.36px;
+	color: #687888;
+	opacity: 1;
+}
+
+._img_box {
+	background: #F7FAFD 0% 0% no-repeat padding-box;
+	border-radius: 12px;
+	opacity: 1;
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+.big_img_box {
+	border-radius: 12px;
+	opacity: 1;
+}
+
+._img_box_v2 {
+	background: #F7FAFD 0% 0% no-repeat padding-box;
+	border-radius: 12px;
+	opacity: 1;
+	margin-bottom: 32px;
+}
+
+.contents_guidebook_1_ul li {
+	text-align: left;
+	font: normal normal normal 15px/34px Spoqa Han Sans Neo;
+	/* 가이드라인 18px */
+	letter-spacing: -0.36px;
+	color: #687888;
+}
+
+.contents_guidebook_2_ol li {
+	text-align: left;
+	font: normal normal normal 16px/34px Spoqa Han Sans Neo;
+	/* 가이드라인 18px */
+	letter-spacing: -0.36px;
+	color: #687888;
+}
+
+._img_guidebook_control_sns {
+	width: 32px;
+	height: 32px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #E7EBEF;
+	border-radius: 3px;
+	opacity: 1;
+}
+
+._link_box_temp {
+	height: 150px;
+	margin-top: 111px;
+	background: var(- -unnamed-color-091627) 0% 0% no-repeat padding-box;
+	background: #091627 0% 0% no-repeat padding-box;
+	border-radius: 12px 12px 12px 12px !important;
+	opacity: 1;
+	cursor: pointer;
+}
+
+.link_box_text {
+	text-align: center;
+	font: normal normal bold 24px/52px Spoqa Han Sans Neo;
+	letter-spacing: 0px;
+	color: #FFFFFF;
+	opacity: 1;
+	cursor: pointer;
+}
+
+.check_sub_title {
+	padding-bottom: 20px;
+	font: normal normal bold 18px/52px Spoqa Han Sans Neo;
+	color: #4C64F2;
+}
+
+.guide_link_a {
+	text-align: left;
+	font: normal normal normal 16px/34px Spoqa Han Sans Neo;
+	letter-spacing: -0.36px;
+	opacity: 1;
+	text-decoration: underline;
+}
+
+.guide_link_a:link {
+	text-align: left;
+	font: normal normal normal 16px/34px Spoqa Han Sans Neo;
+	letter-spacing: -0.36px;
+	opacity: 1;
+	text-decoration: underline;
+}
+
+.guide_link_a:visited {
+	text-align: left;
+	font: normal normal normal 16px/34px Spoqa Han Sans Neo;
+	letter-spacing: -0.36px;
+	opacity: 1;
+	text-decoration: underline;
+}
+
+.guide_link_a:hover {
+	text-align: left;
+	font: normal normal normal 16px/34px Spoqa Han Sans Neo;
+	letter-spacing: -0.36px;
+	opacity: 1;
+	text-decoration: underline;
+}
+
+.guide_link_a:active {
+	text-align: left;
+	font: normal normal normal 16px/34px Spoqa Han Sans Neo;
+	letter-spacing: -0.36px;
+	opacity: 1;
+	text-decoration: underline;
+}
+
+.slick-prev-arrow {
+	position: absolute;
+	left: -1.5%;
+	top: 40%;
+	outline: black;
+	background-size: 100%, 100%;
+	border: none;
+	z-index: 4;
+	cursor: pointer;
+}
+
+.slick-next-arrow {
+	position: absolute;
+	right: -1.5%;
+	top: 40%;
+	outline: black;
+	background-size: 100%, 100%;
+	border: none;
+	z-index: 4;
+	cursor: pointer;
+}
+
+.bottom_sns {
+	margin-top: 20px;
+}
+
+.guide_mini_tile_img {
+	width: 160px;
+	height: 160px;
+	margin: 6px 6px 6px 6px;
+	background: transparent url('img/box-info.png') 0% 0% no-repeat
+		padding-box;
+	border-radius: 12px;
+	opacity: 1;
+}
+
+.guide_temp_title_text {
+	text-align: center;
+	font: normal normal normal 48px/49px Spoqa Han Sans Neo;
+	letter-spacing: -0.96px;
+	color: #1F2022;
+}
+
+.guide_temp_contents_text {
+	text-align: center;
+	font: normal normal normal 18px/34px Spoqa Han Sans Neo;
+	letter-spacing: -0.36px;
+	color: #687889;
+	opacity: 1;
+}
+
+.guide_temp_box_v1 {
+	height: 180px;
+}
+
+.guide_temp_box_v2 {
+	height: 32px;
+}
+
+.guide_temp_box_v3 {
+	height: 48px;
+}
+
+.guidelink_img_text {
+	text-align: left;
+	font: normal normal normal 24px/43px Spoqa Han Sans Neo;
+	letter-spacing: -0.52px;
+	color: #FFFFFF;
+	opacity: 1;
+	padding-top: 5px;
+}
+
+.card {
+	border-radius: 12px !important;
+}
+
+.card-img {
+	border-radius: 12px !important;
+}
+
+.temp_a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.outline {
+	outline: none;
+}
+
+.slick-slide {
+	outline: none
+}
+
+.guide_card_link_a {
+	outline: none;
+}
+
+/* 툴팁 */
+.tooltips {
+	background: none;
+	border: none;
+	padding: 0px;
+}
+.tooltips:focus {
+	outline: none;
+}
+
+.tooltip-inner {
+	max-width: 284px;
+	text-align: left;
+	font: normal normal normal 12px/20px Spoqa Han Sans Neo;
+	letter-spacing: -0.6px;
+	color: #FFFFFF;
+	opacity: 1;
+}
+
+/* 카드 디자인 재사용 */
+.tile_card_content_title {
+	text-align: left;
+	font: normal normal bold 19px/30px Noto Sans KR;
+	letter-spacing: -0.95px;
+	color: #1F2022;
+	opacity: 1;
+}
+
+.tile_card_category_value {
+	text-align: left;
+	font: normal normal normal 16px/15px Noto Sans KR;
+	letter-spacing: -0.32px;
+	color: #687888;
+	opacity: 1;
+}
+
+.tile_card_space_emoji {
+	padding-right: 8px;
+	padding-right: 8px;	
+}
+
+.tile_card_title_box {
+	height: 55px;
+}
+
+.price_box {
+	background: #F5F5FF 0% 0% no-repeat padding-box;
+    border-radius: 6px;
+    opacity: 1;
+    padding: 10px 10px 10px 10px;
+    white-space : nowrap;
+}
+
+.tile_card_price {
+	text-align: center;
+	font: normal normal bold 17px/30px Spoqa Han Sans Neo;
+	letter-spacing: 0px;
+	color: #4C64F2;
+	opacity: 1;
+}
+
+.tile_card_price_v2 {
+	text-align: right;
+	text-decoration: line-through;
+	font: normal normal normal 15px/30px Spoqa Han Sans Neo;
+	letter-spacing: 0px;
+	color: #4C64F2;
+	opacity: 0.5;
+}
+
+.tile_card_sales_price {
+	text-align: center;
+	font: normal normal bold 17px/30px Spoqa Han Sans Neo;
+	letter-spacing: 0px;
+	color: #4C64F2;
+	opacity: 1;
+}
+
+.tile_card_request_price {
+	text-align: center;
+	font: normal normal bold 17px/30px Spoqa Han Sans Neo;
+	letter-spacing: 0px;
+	color: #4C64F2;
+	opacity: 1;
+}

@@ -1,0 +1,866 @@
+ul{
+	list-style:none;
+}
+img{
+	display:inline !important;
+	object-fit: cover;
+}
+select {
+   -webkit-appearance:none; /* for chrome */
+   -moz-appearance:none; /*for firefox*/
+   appearance:none;
+   background:url('/assets/resources/icon/estimate_form/ic_chevron_gray_16.svg') no-repeat right 16px center;
+}
+
+select:disabled{
+	opacity:0.3
+}
+
+input {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
+input[type=checkbox] { 
+	display:none; 
+}
+
+input[type=checkbox] + label { 
+	display: inline-block; 
+	margin-bottom:0px;
+	cursor: pointer; 
+	line-height: 22px; 
+	padding-left: 32px; 
+	background: url('/assets/resources/icon/estimate_form/checkbox/ic_check_box_n.svg') left/22px no-repeat; 
+}
+
+input[type=checkbox]:checked + label {
+	background-image: url('/assets/resources/icon/estimate_form/checkbox/ic_check_box_s.svg'); 
+}
+
+input[type=checkbox]:disabled + label {
+	opacity:0.3;
+	background-image: url('/assets/resources/icon/estimate_form/checkbox/ic_check_box_d.svg'); 
+}
+
+input[type=radio] { 
+	display:none; 
+}
+
+input[type=radio] + label { 
+	display: inline-block; 
+	margin-bottom:0px;
+	cursor: pointer; 
+	line-height: 22px; 
+	padding-left: 32px; 
+	background: url('/assets/resources/icon/estimate_form/radiobutton/ic_radio_btn_n.svg') left/22px no-repeat; 
+}
+
+input[type=radio]:checked + label {
+	background-image: url('/assets/resources/icon/estimate_form/radiobutton/ic_radio_btn_s.svg'); 
+}
+select{
+	color: #a8a8a8;
+	border-radius:0;
+}
+
+select:focus{
+	outline-color: #000000;
+}
+
+select option{
+	color: black;
+}
+
+input[type="text"]{
+	border: solid 1px #dbdbdb;
+}
+
+input[type="text"]:focus{
+	outline-color: #000000;
+}
+
+input[type="tel"]{
+	border: solid 1px #dbdbdb;
+}
+
+input[type="tel"]:focus{
+	outline-color: #000000;
+}
+
+textarea {
+	border: solid 1px #dbdbdb;
+    outline-color: #000000;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
+textarea::placeholder {
+	font-family: var(--default-font);
+	font-size: 14px;
+	font-weight: var(--font-regular);
+	line-height: 24px;
+	letter-spacing: -0.35px;
+	color: #a8a8a8;
+}
+option{
+	font-family: var(--default-font);
+	font-size: 16px;
+	font-weight: var(--font-regular);
+	line-height: 28px;
+	letter-spacing: -0.4px;
+	color: var(--black);
+}
+
+.title_text{
+	text-align:center;
+	padding-top:24px;
+}
+
+.start_image_container{
+	margin-top:38px;
+	margin-bottom:32px;
+	background-color: #f5f5f5;	
+	align-items:center;
+	text-align:center;
+	padding-top:16px;
+	padding-bottom:16px;
+	display:flex;
+	justify-content:center;
+}
+
+.start_image{
+	width:313px;
+	height:205px;
+}
+
+.cons_area_detail{
+	position: absolute;
+    top: 76.6%;
+    display: flex;
+    align-items: center;
+    left: 16px;
+    height: 32px;
+    justify-content: center;
+}
+
+.cons_area_container{
+	position:relative;
+	width:313px;
+}
+
+.gray_color{
+	--color:#848484;
+}
+
+.estimate_form_container{
+	padding-top:40px;
+	padding-left:39px;
+	padding-right:39px;
+}
+
+.start_bottom_padding{
+	padding-bottom:90px;
+}
+
+.caption_text_background{
+	width: 100%;
+	background-color:var(--color);
+	margin-top:16px;
+	padding-top:24px;
+	padding-bottom:24px;
+	padding-left:16px;
+	padding-right:16px;
+}
+
+.type_select_padding{
+	padding-bottom:268px;
+}
+
+.desire_date_padding{
+	padding-bottom:156px;
+}
+
+.area_change_container{
+	margin-top:24px;
+}
+
+.area_change{
+	margin-top:8px;	
+	display:flex;
+	align-items:center;
+	padding-right:auto;
+}
+
+.area_cheange_input{
+	width: 157px;
+	height: 44px;
+	text-align:right;
+	margin-right:8px;
+	padding-left:10px;
+	padding-right:39px;
+}
+
+.acreage_text{
+	width:345px;
+}
+
+.acreage_text_number{
+	margin-left:8px;
+}
+
+.acreage_change_box_m{
+	display:inline-block;
+	background-color:var(--color);
+	width: 40px;
+ 	height: 30px;
+ 	text-align: center;
+ 	line-height: 30px !important;
+ 	cursor: pointer;
+ 	position: absolute;
+ 	margin-left: 265px;
+}
+
+.acreage_change_box_a{
+	display:inline-block;
+	background-color:var(--color);
+	width: 40px;
+ 	height: 30px;	
+ 	text-align: center;
+ 	cursor: pointer;
+ 	position: absolute;
+	margin-left:305px;
+}
+
+.acreage_change_box_a > span {
+	line-height: 30px !important;
+}
+
+.acreage_change_box_m > span {
+	line-height: 30px !important;
+}
+
+.button_box{
+	 height: 72px;
+	 width: 100%;
+	 padding-left:39px;
+	 padding-right:39px;
+	 padding-top:16px;
+	 padding-bottom:16px;
+	 display:flex;
+	 align-items:center;
+	 position: -webkit-sticky;
+ 	 position: sticky;
+ 	 bottom:0;
+ 	 background-color:white;
+}
+
+.test{
+	height:auto;
+}
+
+.next_button{
+	width:450px;
+	height:41px;
+	text-align:center;
+}
+
+.prev_button{
+	width:210px;
+	height:41px;
+	text-align:center;
+	margin-right:30px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+}
+
+.start_button{
+	width:100%;
+	text-align:center;
+	height:48px;
+	align-items:center;
+	display:flex;
+	justify-content:center;
+	border-radius:24px;
+	margin-bottom:16px;
+}
+
+.caption_text{
+	margin-top:16px;
+}
+
+.tile_list_text{
+	margin-top:40px;
+}
+
+.progress{
+	height:6px;
+}
+
+.progress-bar{
+	background-color:var(--color) !important;
+	width:0%;
+}
+
+.form-check{
+	padding-left:0px;
+}
+
+.input_text{
+	position: absolute;
+	margin-left:126px;
+}
+
+.recommend_tile_text{
+	margin-top:10px;
+	margin-bottom:16px;
+}
+
+.tile_all_list{
+	display:none;
+}
+
+.tile_modal .modal-body{
+	width:646px;
+	height:801px;
+	padding:0;
+}
+
+.tile_modal .modal-content{
+	width:646px;
+	height:801px;
+	background-color:transparent;
+	border-color:transparent;
+	padding:0;
+}
+
+#ServiceAreaModal .modal-content{
+	width: 416px;
+  	height: 448px;
+}
+
+#ServiceAreaModal .modal-body{
+	width: 416px;
+  	height: 448px;
+  	padding-left:24px;
+  	padding-right:24px;
+  	padding-top:19px;
+  	padding-bottom:32px;
+}
+
+#ServiceAreaModal .modal-dialog-centered{
+	justify-content: center;
+	height:100%
+}
+
+.service_modal_title{
+    padding-top:11px;
+    padding-bottom:11px;
+    margin-bottom:19px;
+}
+
+.area_text{
+	margin-bottom:10px;
+}
+
+.area_detail_text{
+	margin-bottom:28px;
+}
+
+.close_button {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+    z-index: 100;
+    top: 18px;
+    right: 45px;
+    cursor:pointer;
+}
+
+.close_button_service_area {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    z-index: 100;
+    top: 23px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.carousel-control-prev{
+	opacity:1;
+}
+
+.carousel-control-prev-icon{
+	background-image: url('/assets/resources/icon/estimate_form/modalbutton/bt-cs-page-prev.svg');
+	width: 45px;
+	height: 45px; 
+	position: absolute;
+	top: 278px;
+    right: 50px;
+}
+
+.carousel-control-prev, .carousel-control-next{
+	opacity:1;
+}
+
+.carousel-control-next-icon{
+	background-image: url('/assets/resources/icon/estimate_form/modalbutton/bt-cs-page-next.svg');
+	width: 45px;
+	height: 45px; 
+	position: absolute;
+	top: 278px;
+    left: 50px;
+}
+
+.modal_tile_info_container{
+	background-color:white;
+	text-align:center;
+	height:147px;
+	margin-left:23px;
+	margin-right:23px;
+	width: 600px
+}
+
+.img_size {
+  height: 600px;
+  width: 600px;
+  margin-left:23px;
+  margin-right:23px;
+}
+
+.service_area_info{
+	background-color:white;
+	width: 416px;
+ 	height: 448px;
+}
+
+
+.box_align{
+	display:flex;
+	align-items:center;
+	height:40px;
+	padding-bottom:8px;
+}
+
+.element_container{
+	margin-top:24px;
+}
+
+.validation_check{
+	padding-top:10px;
+	display:none;
+}
+
+.validation_check_small{
+	display:none;
+}
+
+.dropdown_box{
+	width: 100%;
+	height: 44px;
+	margin-top: 8px;
+	padding-left:16px;
+	border: solid 1px var(--color);
+	background-color: var(--white);
+}
+
+.select_container{
+	padding-top:24px;
+}
+
+.selectbox_text{
+	opacity:0.4;
+}
+
+._tile_card {
+	margin-top:0;
+	margin-left:0;
+	margin-right:0;
+	margin-bottom:12px;
+}
+
+.view_detail{
+	width:100%;
+	text-align:center;
+}
+
+.view_all_text{
+	text-align:center;
+}
+
+.view_more_button{
+	cursor: pointer; 
+}
+
+.tile_select_button{
+	background-color:var(--color);
+	height:100%;
+	width:300px;
+    display: inline-block;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.modal_button_box{
+	 height: 56px;
+	 width: 100%;
+	 display:flex;
+	 align-items:center;
+ 	 margin-left:23px;
+ 	 margin-right:23px;
+}
+
+._spec_box_center{
+	justify-content: center;
+}
+
+.slide_index{
+	background: rgba(255,255,255,0.3);
+	width:55px;
+	height:21px;
+	border-radius:17px;
+	text-align:center;
+	display:flex;
+	justify-content: center;
+}
+
+.slide_index_container{
+	text-align:center;
+	align-items: center;
+	position: absolute;
+	top: 567px;
+    display: flex;
+    width: 100%;
+    height: 21px;
+    justify-content: center;
+}
+
+.tile_estimate{
+	margin-top:24px;
+	margin-bottom:40px;
+}
+
+.add_request_textarea{
+	padding-top:16px;
+	padding-left:16px;
+	height:120px;
+	width:100%;
+	resize: none;
+}
+
+.address_box{
+	display:flex;
+}
+
+.add_request_text{
+	margin-bottom:8px;
+}
+
+.add_request_box{
+	margin-bottom:40px;
+}
+
+.add_request_text_main{
+	float: left;
+}
+
+.letter_number{
+	float: right;
+	padding-top:5px;
+}
+
+.none{
+	display:none;
+}
+
+.kakao_map{
+	display:none;
+	border:1px solid;
+	height:300px;
+	margin:5px 0;
+	position:relative;
+}
+
+.kakao_exit_button{
+	cursor:pointer;
+	position:absolute;
+	right:0px;
+	top:-1px;
+	z-index:1;
+}
+
+.search_button{
+	background-color:black;
+	margin-left:10px;
+	width:93px;
+	height:44px;
+	cursor:pointer;
+	text-align:center;
+	padding-top:8px;
+}
+
+.input_info{
+	height:44px;
+	width:100%;
+	padding-left:16px;
+}
+
+.complete_text{
+	text-align:center;
+	margin-bottom:40px;
+}
+
+.complete_button{
+	width:345px;
+	height:40px;
+	text-align:center;
+}
+
+.complete_button_container{
+	display:flex;
+	justify-content:center;
+	margin-bottom:428px;
+}
+
+.tile_estimate_detail{
+	height:172px;
+	background-color: #f5f5f5;
+	border: solid 1px #dbdbdb;
+	padding-top:16px;
+	padding-left:16px;
+	padding-right:16px;
+	padding-bottom:24px;
+	margin-top:16px;
+}
+
+.estimate_number{
+	 background-color: var(--color);
+	 border-radius: 10.5px;
+	 width:66px;
+	 height:21px;
+	 display:flex;
+	 align-items: center;
+	 justify-content:center;
+	 float: left;
+}
+
+.estimate_number_text{
+	font-family: var(--default-font);
+	font-size: 12px;
+	font-weight: 800;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 3.08;
+	letter-spacing: -0.36px;
+	text-align: left;
+	color: var(--color);
+}
+
+.image_tile{
+	width: 87px;
+  	height: 87px;
+	border: solid 1px #dbdbdb;
+	margin-right:20px;
+}
+
+.tile_name{
+	margin-bottom:8px;
+}
+
+.estimate_spec_box{
+	padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 12px;
+    align-items:center;
+}
+
+.estimate_add{
+	height:48px;
+	background-color: #f5f5f5;
+	border: solid 1px #dbdbdb;
+	border-top: 0px;
+	display:flex;
+	align-items: center;
+	justify-content:center;
+	cursor:pointer;
+}
+
+.image_add{
+	margin-right:4px;
+}
+
+.estimate_spec_box > .dot{
+	width: 3px;
+    height: 3px;
+    margin: 5px 5px 5px 4px;
+    background-color: #DBDBDB;
+}
+
+#tile_display2{
+	display:none;
+}
+
+#tile_display3{
+	display:none;
+}
+
+.estimate_box_top{
+	margin-bottom:45px;
+}
+
+.estimate_close_img{
+	float:right;
+	cursor:pointer;
+}
+
+@media screen and (min-width: 768px) {
+	.container-wrap {
+	    margin: 0 auto;
+	    width: 768px;
+		margin-top:40px;
+		padding-top:40px;
+		padding-bottom:24px;
+		padding-left:39px;
+		padding-right:39px;
+		margin-bottom:335px;
+	    background-color: #fff;
+	    box-sizing: border-box;
+	    border-radius: 8px;
+	}
+	
+	.estimate_form_container{
+		padding-left:0;
+		padding-right:0;
+		padding-top:0;
+	}
+	
+	.button_box{
+		padding-left:0;
+		padding-right:0;
+	}
+	
+	body {
+		background-color: #f5f5f5;
+	}
+	
+	.progress{
+		margin-bottom:40px;
+	}
+	
+	.modal-dialog{
+		max-width:646px;
+	}
+}
+@media screen and (max-width: 768px) {
+	.start_bottom_padding{
+		padding-bottom:442px;
+	}
+	
+	.tile_modal .modal-body{
+		width:100%;
+		height:576px;
+		padding:0;
+	}
+	
+	.tile_modal .modal-content{
+		width:100%;
+		height:576px;
+		padding:0;
+	}
+	
+	.img_size {
+		height: 375px;
+		width: 100%;
+		margin-left:0;
+		margin-right:0;
+	}
+	
+	.carousel-control-prev{
+		display:none;
+	}
+	
+	.carousel-control-next{
+		display:none;
+	}
+	
+	.modal-dialog {
+	    max-width: none; 
+	    margin: 0;
+	}
+	
+	.modal_tile_info_container{
+		margin-left:0;
+		margin-right:0;
+		width:100%;
+	}
+	
+	.modal_button_box{
+		margin-left:0;
+		margin-right:0;
+	}
+	
+	.tile_select_button{
+		width:50%;
+	}
+	
+	.close_button {
+	    top: 16px;
+	    right: 16px;
+	}
+	
+	.slide_index_container{
+		top: 338px;
+	}
+
+}
+
+@media screen and (max-width: 576px) {
+	.estimate_form_container{
+		padding-left:15px;
+		padding-right:15px;
+	}
+	
+	.start_bottom_padding{
+		padding-bottom:186px;
+	}
+	
+	.col-6{
+		padding-right:15px;
+		padding-left:15px;
+	}
+	
+	.button_box{
+		padding-left:15px;
+		padding-right:15px;
+	}
+	
+	.prev_button{
+		margin-right:15px;
+	}
+	
+	#ServiceAreaModal .modal-content{
+		width: 100%;
+	  	height:100%;
+	}
+	
+	#ServiceAreaModal .modal-body{
+		width: 100%;
+	  	height:100%;
+	  	padding-left:24px;
+	  	padding-right:24px;
+	  	padding-top:19px;
+	  	padding-bottom:32px;
+	}
+	
+	.area_detail_text .body2{
+		font-family: var(--default-font);
+		font-weight: var(--font-regular);
+		line-height: 24px;
+		letter-spacing: -0.35px;
+		color: var(--color);
+	}
+}
