@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `tb_board` (
+  `number` bigint NOT NULL AUTO_INCREMENT,
+  `contents` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `name` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`number`)
+)

@@ -23186,3 +23186,36 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [views
 [2023-02-01 16:53:19:33658257][http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/assets/resources/icon/contents/main/ic_btn_arrow_pc_n.svg", parameters={}
 [2023-02-01 16:53:19:33658258][http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler ["classpath:/static/assets/"]
 [2023-02-01 16:53:19:33658259][http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+[2023-02-01 19:44:30:1816][restartedMain] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+[2023-02-01 19:44:30:1816][restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1194 ms
+[2023-02-01 19:44:32:3533][restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+[2023-02-01 19:44:32:3634][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2023-02-01 19:44:32:3679][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 3 mappings in 'requestMappingHandlerMapping'
+[2023-02-01 19:44:32:3689][restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+[2023-02-01 19:44:32:3695][restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2023-02-01 19:44:54:25700][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-02-01 19:44:54:25701][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+[2023-02-01 19:44:54:25708][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[2023-02-01 19:44:54:25708][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+[2023-02-01 19:46:29:121215][restartedMain] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+[2023-02-01 19:46:29:121215][restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 416 ms
+[2023-02-01 19:46:29:121396][restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+[2023-02-01 19:46:29:121440][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2023-02-01 19:46:29:121449][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 3 mappings in 'requestMappingHandlerMapping'
+[2023-02-01 19:46:29:121455][restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+[2023-02-01 19:46:29:121458][restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2023-02-01 19:46:33:125392][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-02-01 19:46:33:125393][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+[2023-02-01 19:46:33:125398][http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[2023-02-01 19:46:33:125398][http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+[2023-02-01 19:46:49:141258][restartedMain] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+[2023-02-01 19:46:49:141259][restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 414 ms
+[2023-02-01 19:46:49:141415][restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+[2023-02-01 19:46:49:141470][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2023-02-01 19:46:49:141480][restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 3 mappings in 'requestMappingHandlerMapping'
+[2023-02-01 19:46:49:141486][restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+[2023-02-01 19:46:49:141491][restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2023-02-01 19:46:52:144146][http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[2023-02-01 19:46:52:144147][http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+[2023-02-01 19:46:52:144150][http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[2023-02-01 19:46:52:144151][http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms

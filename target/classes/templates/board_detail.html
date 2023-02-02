@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<th:block layout:fragment="css">	
+	<link rel="stylesheet" href="/lib/bootstrap/bootstrap-4.3.1-dist/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" href="/lib/summernote/summernote-bs4.css"></link>
+</th:block>
+
+<div layout:fragment="content">
+	<div class="justify-content-center row bg-light">
+		<div class="col-12 p-3"></div>
+		
+		<div class="col-md-8">
+			<span>시공사례 정보</span>
+		</div>
+						
+		<div class="col-12 p-3"></div>
+		<div class="col-md-8">
+		
+			<table class="table">
+				<tr>
+					<th>제목</th>
+					<td>
+						<span th:text="${BoardDetail.title}"></span>
+					</td>
+				</tr>
+				<tr>
+					<th>작성자</th>
+					<td>
+						<span th:text="${BoardDetail.name}"></span>
+					</td>
+				</tr>
+				</table>
+				</div>
+				
+				<div class="col-md-8">
+				<table class="table">
+				<tr>
+					<th>내용</th>
+					<td>
+						<span th:utext="${BoardDetail.contents}"></span>
+					</td>
+				</tr>
+			</table>
+			<div class="col-12 p-3"></div>
+			<a th:href="@{/update}+'?no=' + ${BoardDetail.number}" class="btn btn-primary">수정하기</a>
+			<a href="/" class="btn btn-info">목록으로</a>
+		</div>
+		<div class="col-12 p-3"></div>
+	</div>
+</div>
+
+</html>
